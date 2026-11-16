@@ -102,10 +102,12 @@ for slug, (dest, title, desc) in SHORT.items():
         dest_js='"' + dest.replace('"', '') + '"', slug=slug))
 
 # ---------- sitemap and robots ----------
+# Change LASTMOD to the day index.html last changed in a way worth a search engine's second look.
+LASTMOD = "2026-11-16"
 (repo / "sitemap.xml").write_text(
     '<?xml version="1.0" encoding="UTF-8"?>\n'
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    f'  <url><loc>{SITE}</loc></url>\n'
+    f'  <url><loc>{SITE}</loc><lastmod>{LASTMOD}</lastmod></url>\n'
     '</urlset>\n')
 (repo / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n")
 
@@ -144,7 +146,7 @@ p{margin:0 0 1rem;color:#55665e}
 <li><a href="https://guide.vethomeguard.org/">Help for a veteran</a></li>
 <li><a href="https://mobilitytalk.org/">Disability help</a></li>
 <li><a href="https://www.yogamomtalk.com/">Help for moms</a></li>
-<li><a href="https://www.ohiobingo.org/">A bingo game</a></li>
+<li><a href="https://www.findbingo.org/">A bingo game</a></li>
 <li><a href="https://ohioweed.org/">Cannabis in Ohio</a></li>
 </ul>
 <p><a class="home" href="/">Go to travisvought.com</a></p>
