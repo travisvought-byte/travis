@@ -35,3 +35,7 @@ To add one, make a folder with the short name and copy any existing `index.html`
 - `fonts/`: Archivo and Source Serif 4, hosted here so the page loads without outside requests. Both are under the SIL Open Font License (see the license files).
 - `sitemap.xml`, `robots.txt`: help search engines find the page.
 - `CNAME`: tells GitHub Pages to serve the site at travisvought.com.
+
+## Visit counts
+
+Every page and short link reports to the shared GoatCounter dashboard at https://travisvought.goatcounter.com/ under paths that start `/travisvought.com/` (for example `/travisvought.com/weed` for the short link printed on cannabis flyers). Short links count the visit, then forward within 1.2 seconds; without JavaScript the page still forwards after 2 seconds. The counter snippet lives in `tools/build_assets.py` (`COUNTER`) and is pasted once into `index.html`.

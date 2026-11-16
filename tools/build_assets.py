@@ -63,6 +63,16 @@ SHORT = {
                   "The Alpha to Omega series and other books by Travis Vought on Amazon."),
 }
 
+# One GoatCounter dashboard is shared by all the sites; every path here starts /travisvought.com
+# so the sites never mix. No query strings, no cookies.
+COUNTER = (
+    '<script>window.goatcounter={path:function(){return "/travisvought.com"+location.pathname},'
+    'referrer:function(){try{var u=new URL(document.referrer);return u.origin+u.pathname}catch(e){return ""}}};</script>'
+    '<script data-goatcounter="https://travisvought.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
+)
+
+# A short link counts its visit (so flyers and billboards can be compared), then forwards.
+# The count never holds a visitor more than 1.2 seconds; without JavaScript the refresh forwards anyway.
 REDIRECT = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,8 +83,10 @@ REDIRECT = """<!DOCTYPE html>
 <meta property="og:url" content="{dest}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta http-equiv="refresh" content="0; url={dest}">
-<script>location.replace({dest_js});</script>
+<meta http-equiv="refresh" content="2; url={dest}">
+<script>(function(){{var done=false;function go(){{if(!done){{done=true;location.replace({dest_js})}}}}
+var i=new Image();i.onload=i.onerror=go;setTimeout(go,1200);
+i.src="https://travisvought.goatcounter.com/count?p="+encodeURIComponent("/travisvought.com/{slug}")+"&t="+encodeURIComponent("Short link: {slug}")+"&rnd="+Math.random().toString(36).slice(2)}})();</script>
 </head>
 <body>
 <p><a href="{dest}">Continue to {title}</a></p>
@@ -87,7 +99,7 @@ for slug, (dest, title, desc) in SHORT.items():
     d.mkdir(exist_ok=True)
     (d / "index.html").write_text(REDIRECT.format(
         title=html.escape(title), desc=html.escape(desc), dest=html.escape(dest, quote=True),
-        dest_js='"' + dest.replace('"', '') + '"'))
+        dest_js='"' + dest.replace('"', '') + '"', slug=slug))
 
 # ---------- sitemap and robots ----------
 (repo / "sitemap.xml").write_text(
@@ -107,6 +119,7 @@ for slug, (dest, title, desc) in SHORT.items():
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#143229">
 <link rel="icon" href="/favicon.ico" sizes="any">
+""" + COUNTER + """
 <style>
 """ + FONT_FACE.replace("FONTDIR", "/fonts") + """
 body{margin:0;background:#f2f5ee;color:#143229;font-family:"Source Serif 4",Georgia,serif;font-size:1.125rem;line-height:1.65}
