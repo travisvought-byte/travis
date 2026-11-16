@@ -40,7 +40,7 @@
       "@id": "https://travisvought.com/#travis",
       "name": "Travis Vought",
       "url": "https://travisvought.com/",
-      "image": "https://travisvought.com/og.png",
+      "image": "https://travisvought.com/photos/travis-vought.jpg",
       "jobTitle": "Founder and Chair, Veteran Home Guardians",
       "description": "Marine Corps veteran who builds free, searchable guides that help veterans, people with disabilities, moms and local communities find real help.",
       "address": {"@type": "PostalAddress", "addressLocality": "Marengo", "addressRegion": "OH", "addressCountry": "US"},
@@ -160,6 +160,16 @@ a:hover{text-decoration-color:var(--brass)}
 @keyframes settle{from{opacity:0;font-stretch:72%}to{opacity:1;font-stretch:118%}}
 @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
+/* photos */
+.intro{display:grid;grid-template-columns:minmax(0,1fr) 17rem;gap:2rem 3.5rem;align-items:start}
+.intro .say{grid-column:1;grid-row:1}
+.portrait{grid-column:2;grid-row:1;margin:.4rem .6rem 0 0}
+.portrait img{display:block;width:100%;height:auto;border:2px solid var(--spruce);box-shadow:.6rem .6rem 0 var(--brass)}
+.served{display:grid;grid-template-columns:minmax(0,48rem) minmax(0,19rem);gap:2.5rem 3.5rem;align-items:start;justify-content:space-between}
+.scene{margin:1.15rem 0 0}
+.scene img{display:block;width:100%;height:auto;border:1px solid #35594c}
+.scene figcaption{font-family:var(--display);font-size:.95rem;color:var(--mist);margin-top:.6rem}
+
 /* quick routes */
 .routes{margin:2.75rem 0 0}
 .routes h2{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:0;margin:0 0 .75rem;color:var(--slate)}
@@ -256,6 +266,12 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
   .site{grid-template-columns:1fr}
   .offers{grid-template-columns:1fr;gap:2rem}
   .record li{grid-template-columns:1fr}
+  .intro{grid-template-columns:1fr;gap:1.5rem}
+  .intro .say,.portrait{grid-column:1;grid-row:auto}
+  .portrait{width:9rem;margin:0}
+  .portrait img{box-shadow:.4rem .4rem 0 var(--brass)}
+  .served{grid-template-columns:1fr}
+  .scene{max-width:22rem}
   .kit{grid-template-columns:1fr}
   .shelf li:nth-child(n){margin-left:0;margin-right:0}
   .shelf li:nth-child(2),.shelf li:nth-child(4){margin-left:.6rem}
@@ -278,6 +294,8 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
   .record li{border-color:#ccc}
   section{padding:1.5rem 0;break-inside:avoid-page}
   .hero{padding:0 0 1.5rem}
+  .portrait img{box-shadow:none}
+  .scene{display:none}
   .site{padding:.5rem 0;margin:0}
   .shelf li:nth-child(n) .spine{background:#fff;color:#000;border-color:#999}
 }
@@ -304,6 +322,11 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
     <div class="hero">
       <h1><span>Travis</span><span>Vought</span></h1>
       <div class="bar" aria-hidden="true"></div>
+      <div class="intro">
+        <figure class="portrait">
+          <img src="/photos/travis-vought.jpg" srcset="/photos/travis-vought-360.jpg 360w, /photos/travis-vought.jpg 720w" sizes="(max-width:46rem) 9rem, 17rem" width="720" height="720" alt="Travis Vought, in a gray suit and dark tie">
+        </figure>
+        <div class="say">
       <p class="promise">I build free, searchable guides that help people find real help close to home: veterans, people with disabilities, moms, and the halls and small organizations that hold a community together.</p>
       <p class="where">Marine Corps veteran and author. Founder and Chair of Veteran Home Guardians. Marengo, Ohio.</p>
 
@@ -317,6 +340,8 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
           <li><a href="https://ohioweed.org/">Cannabis in Ohio</a></li>
         </ul>
       </nav>
+        </div>
+      </div>
     </div>
 
     <section id="guides">
@@ -405,6 +430,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
   <div class="wrap">
     <h2>Background</h2>
     <p class="lede">Intelligence work and compliance work come down to one habit: find out what is true, write it down so someone else can check it, and act on it. The guides are that habit pointed at everyday problems.</p>
+    <div class="served">
     <ol class="record">
       <li><span class="when">Growing up</span>
         <div><h3>Upstate New York, Eagle Scout</h3><p>Raised around Horseheads and Elmira, one of six kids.</p></div></li>
@@ -419,6 +445,11 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
       <li><span class="when">2026</span>
         <div><h3>Finance Officer, Mobility Independence Foundation</h3><p>Elected by the board in July.</p></div></li>
     </ol>
+    <figure class="scene">
+      <img src="/photos/pow-mia-wreath.jpg" srcset="/photos/pow-mia-wreath-390.jpg 390w, /photos/pow-mia-wreath.jpg 780w" sizes="(max-width:46rem) 80vw, 19rem" width="780" height="1040" loading="lazy" decoding="async" alt="Travis Vought in an American Legion Post 710 shirt, holding a POW/MIA wreath that reads You Are Not Forgotten, in front of a wall of soldiers' names">
+      <figcaption>Carrying the POW/MIA wreath at a memorial service.</figcaption>
+    </figure>
+    </div>
   </div>
 </section>
 
