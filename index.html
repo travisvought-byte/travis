@@ -3,17 +3,75 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Travis Vought | Free guides and directories for veterans, families and communities</title>
-<meta name="description" content="Travis Vought builds free, searchable guides that help veterans, seniors, people with disabilities, moms and local communities find real help. An index of his sites, his background and how to work with him.">
+<title>Travis Vought | Free guides for veterans, people with disabilities, moms and communities</title>
+<meta name="description" content="Marine Corps veteran Travis Vought builds free, searchable guides that help veterans, people with disabilities, moms and local communities find real help close to home. Find every guide here.">
 <link rel="canonical" href="https://travisvought.com/">
-<meta property="og:title" content="Travis Vought">
-<meta property="og:description" content="Free guides and directories that help people find real help, and the background behind them.">
-<meta property="og:type" content="website">
+<meta name="theme-color" content="#143229">
+<meta name="author" content="Travis Vought">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Travis Vought">
 <meta property="og:url" content="https://travisvought.com/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<meta property="og:title" content="Travis Vought">
+<meta property="og:description" content="Free guides that help veterans, people with disabilities, moms and local communities find real help close to home.">
+<meta property="og:image" content="https://travisvought.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Travis Vought. Free guides that help people find real help close to home.">
+<meta property="profile:first_name" content="Travis">
+<meta property="profile:last_name" content="Vought">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@TravisJonVought">
+<meta name="twitter:title" content="Travis Vought">
+<meta name="twitter:description" content="Free guides that help veterans, people with disabilities, moms and local communities find real help close to home.">
+<meta name="twitter:image" content="https://travisvought.com/og.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="me" href="https://x.com/TravisJonVought">
+<link rel="me" href="https://github.com/travisvought-byte">
+<link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://travisvought.com/#travis",
+      "name": "Travis Vought",
+      "url": "https://travisvought.com/",
+      "image": "https://travisvought.com/og.png",
+      "jobTitle": "Founder and Chair, Veteran Home Guardians",
+      "description": "Marine Corps veteran who builds free, searchable guides that help veterans, people with disabilities, moms and local communities find real help.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Marengo", "addressRegion": "OH", "addressCountry": "US"},
+      "worksFor": {"@type": "NGO", "name": "Veteran Home Guardians", "url": "https://www.vethomeguard.org/"},
+      "affiliation": [{"@type": "NGO", "name": "Mobility Independence Foundation", "url": "https://themif.org/"}],
+      "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Certified Anti-Money Laundering Specialist (CAMS)"},
+      "knowsAbout": ["Veteran benefits and resources", "Disability resources", "Charitable bingo", "Ohio cannabis", "Anti-money laundering compliance", "Nonprofit planning"],
+      "sameAs": ["https://x.com/TravisJonVought", "https://github.com/travisvought-byte"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://travisvought.com/#site",
+      "url": "https://travisvought.com/",
+      "name": "Travis Vought",
+      "publisher": {"@id": "https://travisvought.com/#travis"}
+    }
+  ]
+}
+</script>
+
+<script>
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'fonts' in document) {
+    document.documentElement.classList.add('arrive');
+  }
+</script>
+
 <style>
+@font-face{font-family:"Archivo";src:url(/fonts/archivo.woff2) format("woff2-variations"),url(/fonts/archivo.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-style:normal;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url(/fonts/source-serif-4.woff2) format("woff2-variations"),url(/fonts/source-serif-4.woff2) format("woff2");font-weight:200 900;font-style:normal;font-display:swap}
 :root{
   --spruce:#143229;
   --spruce-2:#1f4a3d;
@@ -23,33 +81,48 @@
   --brass-ink:#7a5a0a;
   --slate:#55665e;
   --rule:#cfd8cd;
+  --mist:#d5e0d6;
   --display:"Archivo","Arial Narrow",Arial,sans-serif;
   --body:"Source Serif 4",Georgia,serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-body{margin:0;background:var(--paper);color:var(--spruce);font-family:var(--body);font-size:1.125rem;line-height:1.65;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-a:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+body{margin:0;background:var(--paper);color:var(--spruce);font-family:var(--body);font-size:1.125rem;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-color:var(--brass)}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+[id]{scroll-margin-top:1.5rem}
 .wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
-.skip{position:absolute;left:-999px}
+.skip{position:absolute;left:-999px;top:0}
 .skip:focus{left:1rem;top:1rem;background:var(--sheet);padding:.5rem 1rem;z-index:5}
 
 /* top bar */
 .top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.25rem 0;font-family:var(--display);font-size:.95rem}
 .top .name{font-weight:700;text-decoration:none}
 .top nav{display:flex;gap:1.5rem;flex-wrap:wrap}
-.top nav a{text-decoration:none;border-bottom:2px solid transparent}
+.top nav a{text-decoration:none;border-bottom:2px solid transparent;padding-bottom:.1rem}
 .top nav a:hover{border-bottom-color:var(--brass)}
 
 /* hero */
-.hero{padding:4rem 0 4.5rem;border-bottom:1px solid var(--rule)}
+.hero{padding:3.5rem 0 4rem;border-bottom:1px solid var(--rule)}
 .hero h1{font-family:var(--display);font-stretch:118%;font-weight:800;font-size:clamp(3.2rem,11.5vw,9.5rem);line-height:.88;letter-spacing:-.035em;margin:0 0 2.25rem}
 .hero h1 span{display:block}
-.hero p{max-width:38rem;font-size:clamp(1.2rem,2.1vw,1.45rem);line-height:1.5;margin:0 0 1rem}
-.hero .where{color:var(--slate);font-size:1.05rem;margin:0}
 .bar{width:6rem;height:.5rem;background:var(--brass);margin:0 0 2.25rem}
+.promise{max-width:38rem;font-size:clamp(1.2rem,2.1vw,1.45rem);line-height:1.5;margin:0 0 1rem}
+.where{color:var(--slate);font-size:1.05rem;margin:0}
+.arrive .hero h1{opacity:0}
+.arrive.ready .hero h1{animation:settle 1.1s cubic-bezier(.2,.75,.15,1) both}
+.arrive .bar{transform-origin:left}
+.arrive.ready .bar{animation:draw .7s .55s cubic-bezier(.2,.75,.15,1) both}
+@keyframes settle{from{opacity:0;font-stretch:72%}to{opacity:1;font-stretch:118%}}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* quick routes */
+.routes{margin:2.75rem 0 0}
+.routes h2{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:0;margin:0 0 .75rem;color:var(--slate)}
+.routes ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+.routes a{display:inline-flex;align-items:center;min-height:2.9rem;padding:.55rem 1.05rem;font-family:var(--display);font-weight:650;font-size:1.05rem;text-decoration:none;background:var(--sheet);border:2px solid var(--spruce);transition:background .15s,color .15s}
+.routes a:hover,.routes a:focus-visible{background:var(--spruce);color:var(--paper)}
 
 /* sections */
 section{padding:4.5rem 0}
@@ -67,13 +140,19 @@ h2{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(
 .site .url{font-family:var(--display);font-size:.95rem;color:var(--brass-ink);white-space:nowrap}
 .site .what{grid-column:1/-1;max-width:36rem;font-size:1.05rem;line-height:1.5;color:var(--slate)}
 .site:hover,.site:focus-visible{background:var(--spruce);color:var(--paper)}
-.site:hover .what,.site:focus-visible .what{color:#d5e0d6}
+.site:hover .what,.site:focus-visible .what{color:var(--mist)}
 .site:hover .url,.site:focus-visible .url{color:var(--brass)}
 
 /* provide */
 .offers{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem 3rem;margin:0;padding:0;list-style:none}
 .offers h3{font-family:var(--display);font-weight:700;font-size:1.3rem;line-height:1.2;margin:0 0 .4rem;padding-top:.9rem;border-top:.3rem solid var(--brass)}
 .offers p{margin:0;max-width:30rem}
+
+/* buttons */
+.actions{margin:2.75rem 0 0;display:flex;gap:.75rem 1rem;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;min-height:2.9rem;font-family:var(--display);font-weight:700;font-size:1rem;line-height:1.2;text-decoration:none;padding:.7rem 1.3rem;border:2px solid var(--spruce);background:transparent;color:var(--spruce);cursor:pointer}
+.btn.solid{background:var(--spruce);color:var(--paper)}
+.btn:hover{background:var(--brass);border-color:var(--brass);color:var(--spruce)}
 
 /* background */
 .service{background:var(--spruce);color:var(--paper);border-top:0}
@@ -83,64 +162,103 @@ h2{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(
 .record li{display:grid;grid-template-columns:9.5rem 1fr;gap:0 2rem;padding:1.15rem 0;border-top:1px solid #35594c}
 .record .when{font-family:var(--display);font-weight:600;color:var(--brass);font-size:1rem;padding-top:.15rem}
 .record h3{font-family:var(--display);font-weight:700;font-size:1.25rem;line-height:1.25;margin:0 0 .25rem}
-.record p{margin:0;color:#d5e0d6;font-size:1.05rem}
+.record p{margin:0;color:var(--mist);font-size:1.05rem}
 
-/* community */
+/* introduce */
+.kit{display:grid;grid-template-columns:minmax(0,1fr) 13rem;gap:2rem 3.5rem;align-items:start}
+.bio{margin:0;background:var(--sheet);border-left:.3rem solid var(--brass);padding:1.5rem 1.75rem;max-width:40rem}
+.bio p{margin:0;font-size:1.1rem;line-height:1.7}
+.kit .actions{margin-top:1.25rem}
+.qr{margin:0;text-align:left}
+.qr img{display:block;width:100%;max-width:13rem;height:auto;background:var(--sheet);padding:.6rem;border:1px solid var(--rule)}
+.qr figcaption{font-family:var(--display);font-size:.95rem;margin-top:.6rem;color:var(--slate)}
+.qr figcaption a{color:var(--spruce)}
+.status{font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--brass-ink);min-height:1.5em;margin:.75rem 0 0}
+
+/* get involved */
 .ways{max-width:44rem;margin:0;padding:0;list-style:none}
 .ways li{padding:1rem 0;border-top:1px solid var(--rule)}
 .ways strong{font-family:var(--display);font-weight:700}
-.reach{margin:2.5rem 0 0;display:flex;gap:1rem;flex-wrap:wrap}
-.btn{font-family:var(--display);font-weight:700;font-size:1rem;text-decoration:none;padding:.8rem 1.3rem;border:2px solid var(--spruce)}
-.btn.solid{background:var(--spruce);color:var(--paper)}
-.btn:hover{background:var(--brass);border-color:var(--brass);color:var(--spruce)}
 
 footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;color:var(--slate);font-size:.95rem}
-footer p{margin:0 0 .35rem}
+footer p{margin:0 0 .4rem}
+footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(--display);margin-bottom:1rem}
 
 @media (max-width:46rem){
-  .top nav{gap:1rem}
-  .hero{padding:2.5rem 0 3rem}
-  section{padding:3rem 0}
+  .top{flex-direction:column;gap:.35rem}
+  .top nav{gap:.25rem 1.1rem}
+  .hero{padding:2.25rem 0 3rem}
+  section{padding:3.25rem 0}
   .group{grid-template-columns:1fr}
   .group h3{margin-bottom:.25rem}
   .site{grid-template-columns:1fr}
   .offers{grid-template-columns:1fr;gap:2rem}
   .record li{grid-template-columns:1fr}
+  .kit{grid-template-columns:1fr}
+  .qr img{max-width:10rem}
+  .bio{padding:1.25rem 1.25rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .top nav,.skip,.routes,.actions,.status,.qr figcaption a{display:none!important}
+  .service{background:#fff;color:#000}
+  .service .lede,.record p{color:#333}
+  .record li{border-color:#ccc}
+  section{padding:1.5rem 0;break-inside:avoid-page}
+  .hero{padding:0 0 1.5rem}
+  .site{padding:.5rem 0;margin:0}
 }
 </style>
 </head>
 <body>
-<a class="skip" href="#sites">Skip to the list of sites</a>
+<a class="skip" href="#guides">Skip to the guides</a>
 
 <div class="wrap">
   <header class="top">
     <a class="name" href="/">Travis Vought</a>
     <nav aria-label="Sections">
-      <a href="#sites">Sites</a>
+      <a href="#guides">Guides</a>
       <a href="#provide">What I provide</a>
       <a href="#background">Background</a>
-      <a href="#community">Get involved</a>
+      <a href="#involved">Get in touch</a>
     </nav>
   </header>
+</div>
 
-  <main>
+<main>
+<div class="wrap">
     <div class="hero">
       <h1><span>Travis</span><span>Vought</span></h1>
       <div class="bar" aria-hidden="true"></div>
-      <p>I build free, searchable guides that help people find real help close to home: veterans, seniors, people with disabilities, moms, and the halls and small organizations that hold a community together.</p>
+      <p class="promise">I build free, searchable guides that help people find real help close to home: veterans, people with disabilities, moms, and the halls and small organizations that hold a community together.</p>
       <p class="where">Marine Corps veteran. Founder and Chair of Veteran Home Guardians. Marengo, Ohio.</p>
+
+      <nav class="routes" aria-labelledby="routes-title">
+        <h2 id="routes-title">I'm looking for</h2>
+        <ul>
+          <li><a href="https://guide.vethomeguard.org/">Help for a veteran</a></li>
+          <li><a href="https://mobilitytalk.org/">Disability help</a></li>
+          <li><a href="https://www.yogamomtalk.com/">Help for moms</a></li>
+          <li><a href="https://www.ohiobingo.org/">A bingo game</a></li>
+          <li><a href="https://ohioweed.org/">Cannabis in Ohio</a></li>
+        </ul>
+      </nav>
     </div>
 
-    <section id="sites">
-      <h2>Find the guide you need</h2>
-      <p class="lede">Every site below is free to use. Each one is built from public sources and kept current by the people who use it. If something is wrong, tell me and I fix it.</p>
+    <section id="guides">
+      <h2>Every guide, in one place</h2>
+      <p class="lede">All of these are free to use. Each one is built from public sources and kept current by the people who use it. If something is wrong, tell me and I fix it.</p>
 
       <div class="group">
         <h3>Veterans and seniors</h3>
         <ul class="sites">
           <li><a class="site" href="https://www.vethomeguard.org/">
             <b>Veteran Home Guardians</b><span class="url">vethomeguard.org</span>
-            <span class="what">An Ohio nonprofit that pays veterans to visit veterans living in long-term care, and helps veterans, seniors and families find what they need.</span></a></li>
+            <span class="what">An Ohio nonprofit with free guides to veteran benefits, care, housing and support, and paid veteran-to-veteran visits for isolated veterans in nursing homes.</span></a></li>
           <li><a class="site" href="https://guide.vethomeguard.org/">
             <b>Veteran Resident Resource Guide</b><span class="url">guide.vethomeguard.org</span>
             <span class="what">Benefits, care, housing and local offices for senior and disabled veterans, state by state. Written to hand to a resident, a family or a nursing home.</span></a></li>
@@ -152,7 +270,7 @@ footer p{margin:0 0 .35rem}
         <ul class="sites">
           <li><a class="site" href="https://mobilitytalk.org/">
             <b>Mobility Talk</b><span class="url">mobilitytalk.org</span>
-            <span class="what">A national directory and guide to mobility and disability resources: ramps, equipment, accessibility programs and your rights, with what you need in hand to act on each one.</span></a></li>
+            <span class="what">Help for people with disabilities in every state: benefits, equipment and repairs, home access, rides, in-home help, work, vision and hearing services, and your rights.</span></a></li>
           <li><a class="site" href="https://themif.org/">
             <b>Mobility Independence Foundation</b><span class="url">themif.org</span>
             <span class="what">A foundation working on independence through mobility. I serve as its Finance Officer and help with planning and operations.</span></a></li>
@@ -164,7 +282,7 @@ footer p{margin:0 0 .35rem}
         <ul class="sites">
           <li><a class="site" href="https://www.yogamomtalk.com/">
             <b>Yoga Mom Talk</b><span class="url">yogamomtalk.com</span>
-            <span class="what">Help for moms and caregivers in all 50 states, with OhioMom as its Ohio branch. Founded by Deborah Vought. I build and maintain the site.</span></a></li>
+            <span class="what">A place for moms to connect, with real help when you need it: food, child care, health coverage, disability help and crisis lines in all 50 states. OhioMom is its Ohio branch. Founded by Deborah Vought.</span></a></li>
         </ul>
       </div>
 
@@ -173,7 +291,7 @@ footer p{margin:0 0 .35rem}
         <ul class="sites">
           <li><a class="site" href="https://www.ohiobingo.org/">
             <b>Ohio Bingo</b><span class="url">ohiobingo.org</span>
-            <span class="what">Find a game, fill a hall, fund a cause. Every registered bingo across Ohio, free to players and free to halls, with help for the people who run them.</span></a></li>
+            <span class="what">Find a game, fill a hall, fund a cause. Search Ohio bingo by ZIP code, day and time. Listings and promotion help are free for halls.</span></a></li>
         </ul>
       </div>
 
@@ -182,16 +300,16 @@ footer p{margin:0 0 .35rem}
         <ul class="sites">
           <li><a class="site" href="https://ohioweed.org/">
             <b>OhioWeed</b><span class="url">ohioweed.org</span>
-            <span class="what">The Ohio cannabis guide: a searchable directory of the state's cannabis businesses and services, plain-language education, and tools for contacting regulators and legislators.</span></a></li>
+            <span class="what">A practical Ohio cannabis guide: a source-linked business directory, licensed dispensary locations, events, and plain-language links to Ohio's rules.</span></a></li>
         </ul>
       </div>
 
       <div class="group">
-        <h3>The source</h3>
+        <h3>Open data</h3>
         <ul class="sites">
           <li><a class="site" href="https://github.com/travisvought-byte">
-            <b>Open data on GitHub</b><span class="url">github.com/travisvought-byte</span>
-            <span class="what">The data and code behind the guides are public. Download them, check them, or build on them.</span></a></li>
+            <b>The data behind the guides</b><span class="url">github.com/travisvought-byte</span>
+            <span class="what">Every guide's data and code is public. Download it, check it, or build on it.</span></a></li>
         </ul>
       </div>
     </section>
@@ -201,16 +319,16 @@ footer p{margin:0 0 .35rem}
       <p class="lede">The guides are free and stay free. When an organization needs more than a listing, this is the work I take on.</p>
       <ul class="offers">
         <li><h3>Resource guides and directories</h3>
-          <p>Researched, searchable and built to be handed to the person who needs them. I can build one for a county, a cause or an industry, and set it up so it stays current.</p></li>
+          <p>Researched, searchable, and built to hand to the person who needs it. I can build one for a county, a cause or an industry, and set it up to stay current.</p></li>
         <li><h3>Compliance and risk review</h3>
-          <p>Eleven years of anti-money-laundering and know-your-customer work, applied to regulated fields that get little support: charitable gaming, cannabis, small nonprofits.</p></li>
+          <p>Eleven years of anti-money-laundering and know-your-customer work at J.P. Morgan, applied to regulated fields that get little support: charitable gaming, cannabis and small nonprofits.</p></li>
         <li><h3>Help for bingo halls</h3>
-          <p>Advertising that costs less and reaches more players, plus a second set of eyes on operations and Ohio's bingo rules. It starts with a conversation.</p></li>
+          <p>I ran and promoted bingo at the Marengo American Legion for three years. I help halls bring in more players for less advertising money, and look over operations against Ohio's bingo rules.</p></li>
         <li><h3>Nonprofit planning</h3>
-          <p>Capital plans, funding proposals, sponsor and relationship tracking, and practical ways to use AI as research support while people keep the judgment.</p></li>
+          <p>Capital plans, funding proposals, sponsor and relationship tracking, and practical use of AI as research support, with people keeping the judgment.</p></li>
       </ul>
+      <p class="actions"><a class="btn solid" href="https://www.vethomeguard.org/contact.html">Start a conversation</a></p>
     </section>
-  </main>
 </div>
 
 <section class="service" id="background">
@@ -225,35 +343,107 @@ footer p{margin:0 0 .35rem}
       <li><span class="when">2011 to 2012</span>
         <div><h3>Intelligence analyst, Helmand</h3><p>A further year in Afghanistan as a civilian contractor.</p></div></li>
       <li><span class="when">Eleven years</span>
-        <div><h3>J.P. Morgan Asset Management</h3><p>Anti-money-laundering and know-your-customer compliance, finishing as a vice president leading risk assessment. Certified Anti-Money Laundering Specialist. Chaired the firm's veterans group for two years.</p></div></li>
+        <div><h3>J.P. Morgan Asset Management</h3><p>Anti-money-laundering and know-your-customer compliance, finishing as a vice president leading risk assessment. Certified Anti-Money Laundering Specialist. Chaired the firm's veterans group for two years and kept its cemetery cleanups going through COVID.</p></div></li>
       <li><span class="when">2025</span>
-        <div><h3>Founded Veteran Home Guardians</h3><p>An Ohio 501(c)(3) built on paid veteran-to-veteran visits in long-term care. Before that, three years running and promoting bingo at the Marengo American Legion.</p></div></li>
+        <div><h3>Founded Veteran Home Guardians</h3><p>An Ohio 501(c)(3) nonprofit built on paid veteran-to-veteran visits in long-term care. It also publishes free resource guides.</p></div></li>
       <li><span class="when">2026</span>
-        <div><h3>Finance Officer, Mobility Independence Foundation</h3><p>Elected by the board in July, alongside building the guides listed above.</p></div></li>
+        <div><h3>Finance Officer, Mobility Independence Foundation</h3><p>Elected by the board in July.</p></div></li>
     </ol>
   </div>
 </section>
 
 <div class="wrap">
-  <section id="community">
+  <section id="introduce">
+    <h2>Introduce me</h2>
+    <p class="lede">For podcast hosts, event organizers and anyone passing my name along. Copy the bio, send the page, or print the code.</p>
+    <div class="kit">
+      <div>
+        <blockquote class="bio" id="bio">
+          <p>Travis Vought is a Marine Corps veteran and the founder and chair of Veteran Home Guardians, an Ohio nonprofit. He served eight and a half years in the Marines, including intelligence work in Iraq and Afghanistan, then spent eleven years in anti-money-laundering compliance at J.P. Morgan Asset Management. Today he builds free, searchable guides that help veterans, people with disabilities, moms and local communities find real help close to home. He lives in Marengo, Ohio.</p>
+        </blockquote>
+        <p class="actions">
+          <button class="btn solid" type="button" id="copy-bio">Copy bio</button>
+          <button class="btn" type="button" id="share">Share this page</button>
+        </p>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </div>
+      <figure class="qr">
+        <img src="/qr.svg" width="208" height="208" alt="QR code that opens travisvought.com">
+        <figcaption>Scan to open travisvought.com. Download as <a href="/qr.png" download="travisvought-qr.png">PNG</a> or <a href="/qr.svg" download="travisvought-qr.svg">SVG</a> for print.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="involved">
     <h2>Get involved</h2>
     <p class="lede">These guides get better the same way a town does: people who know something speak up.</p>
     <ul class="ways">
       <li><strong>Send a correction.</strong> A wrong phone number, a new game night, a program that closed. Every guide has a way to report it.</li>
-      <li><strong>Share a guide.</strong> Print it, post it, or hand it to the one person you know who needs it.</li>
+      <li><strong>Share a guide.</strong> Print a <a href="https://guide.vethomeguard.org/flyers.html">ready-made flyer</a>, post it, or hand it to the one person you know who needs it.</li>
       <li><strong>List your organization.</strong> Listings are free. If you serve the people a guide is for, you belong in it.</li>
-      <li><strong>Partner or sponsor.</strong> Donations and sponsorships go to Veteran Home Guardians, a 501(c)(3) nonprofit.</li>
+      <li><strong>Sponsor or donate.</strong> Support goes to Veteran Home Guardians, a 501(c)(3) nonprofit. <a href="https://www.vethomeguard.org/sponsor.html">Sponsor a guide</a> or <a href="https://www.vethomeguard.org/donate.html">make a donation</a>.</li>
     </ul>
-    <p class="reach">
-      <a class="btn solid" href="https://www.vethomeguard.org/">Contact Veteran Home Guardians</a>
+    <p class="actions">
+      <a class="btn solid" href="https://www.vethomeguard.org/contact.html">Get in touch</a>
       <a class="btn" href="https://x.com/TravisJonVought">Message me on X</a>
     </p>
   </section>
+</div>
+</main>
 
+<div class="wrap">
   <footer>
+    <p class="elsewhere">
+      <a href="https://x.com/TravisJonVought">@TravisJonVought</a>
+      <a href="https://x.com/Vethomeguard">@Vethomeguard</a>
+      <a href="https://github.com/travisvought-byte">GitHub</a>
+    </p>
     <p>Travis Vought, Marengo, Ohio.</p>
     <p>Free to share. Please link back to the guide you used.</p>
   </footer>
 </div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  if (root.classList.contains('arrive')) {
+    var go = function () { root.classList.add('ready'); };
+    document.fonts.load('800 1em Archivo').then(go, go);
+    setTimeout(go, 1200);
+  }
+
+  var status = document.getElementById('status');
+  var timer;
+  function say(text) {
+    status.textContent = text;
+    clearTimeout(timer);
+    timer = setTimeout(function () { status.textContent = ''; }, 5000);
+  }
+  function copy(text, done) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { say(done); }, function () { say('Copy did not work. Select the text and copy it.'); });
+    } else {
+      say('Copy did not work. Select the text and copy it.');
+    }
+  }
+
+  document.getElementById('copy-bio').addEventListener('click', function () {
+    copy(document.querySelector('#bio p').textContent.trim(), 'Bio copied.');
+  });
+
+  var page = {
+    title: 'Travis Vought',
+    text: 'Free guides that help people find real help close to home.',
+    url: 'https://travisvought.com/'
+  };
+  document.getElementById('share').addEventListener('click', function () {
+    if (navigator.share) {
+      navigator.share(page).catch(function () {});
+    } else {
+      copy(page.url, 'Link copied: travisvought.com');
+    }
+  });
+})();
+</script>
 </body>
 </html>
