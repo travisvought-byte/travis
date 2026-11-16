@@ -27,6 +27,7 @@ To add one, make a folder with the short name and copy any existing `index.html`
 ## Files
 
 - `index.html`: the page.
+- `photos/`: the portrait in the opening and the photo beside the background list, each in two sizes. They are saved without the camera's location data; keep it that way when adding more.
 - `og.png`: the picture shown when the link is shared on Facebook, LinkedIn, X or in a text message.
 - `qr.png`, `qr.svg`: QR code for travisvought.com. Use the SVG for large prints and billboards.
 - `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`: browser and phone icons.
