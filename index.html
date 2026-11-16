@@ -169,6 +169,11 @@ a:hover{text-decoration-color:var(--brass)}
 .scene{margin:1.15rem 0 0}
 .scene img{display:block;width:100%;height:auto;border:1px solid #35594c}
 .scene figcaption{font-family:var(--display);font-size:.95rem;color:var(--mist);margin-top:.6rem}
+.company{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem 2.5rem}
+.company figure{margin:0}
+.company img{display:block;width:100%;height:auto;border:2px solid var(--spruce)}
+.company figcaption{font-family:var(--display);font-size:.95rem;line-height:1.45;color:var(--slate);margin-top:.7rem}
+.company figcaption a{color:var(--spruce)}
 
 /* quick routes */
 .routes{margin:2.75rem 0 0}
@@ -271,6 +276,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
   .portrait{width:9rem;margin:0}
   .portrait img{box-shadow:.4rem .4rem 0 var(--brass)}
   .served{grid-template-columns:1fr}
+  .company{grid-template-columns:1fr;max-width:22rem}
   .scene{max-width:22rem}
   .kit{grid-template-columns:1fr}
   .shelf li:nth-child(n){margin-left:0;margin-right:0}
@@ -295,7 +301,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
   section{padding:1.5rem 0;break-inside:avoid-page}
   .hero{padding:0 0 1.5rem}
   .portrait img{box-shadow:none}
-  .scene{display:none}
+  .scene,#company{display:none}
   .site{padding:.5rem 0;margin:0}
   .shelf li:nth-child(n) .spine{background:#fff;color:#000;border-color:#999}
 }
@@ -447,13 +453,32 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
     </ol>
     <figure class="scene">
       <img src="/photos/pow-mia-wreath.jpg" srcset="/photos/pow-mia-wreath-390.jpg 390w, /photos/pow-mia-wreath.jpg 780w" sizes="(max-width:46rem) 80vw, 19rem" width="780" height="1040" loading="lazy" decoding="async" alt="Travis Vought in an American Legion Post 710 shirt, holding a POW/MIA wreath that reads You Are Not Forgotten, in front of a wall of soldiers' names">
-      <figcaption>Carrying the POW/MIA wreath at a memorial service.</figcaption>
+      <figcaption>Carrying the POW/MIA wreath on Veterans Day at the Soldiers' and Sailors' Monument in Cleveland.</figcaption>
     </figure>
     </div>
   </div>
 </section>
 
 <div class="wrap">
+    <section id="company" aria-labelledby="company-title">
+      <h2 id="company-title">In good company</h2>
+      <p class="lede">None of this is done alone.</p>
+      <ul class="company">
+        <li><figure>
+          <img src="/photos/with-thomas-quiter.jpg" srcset="/photos/with-thomas-quiter-360.jpg 360w, /photos/with-thomas-quiter.jpg 720w" sizes="(max-width:46rem) 90vw, 20rem" width="720" height="900" loading="lazy" decoding="async" alt="Travis Vought standing beside Thomas Quiter, who is seated in a power wheelchair. Travis holds a signed poster for The Power to Move.">
+          <figcaption>With Thomas Quiter of the Mobility Independence Foundation, after he presented <a href="https://thepowertomovefilm.com/">The Power to Move</a> at Ohio's Libertarian convention in April 2026.</figcaption>
+        </figure></li>
+        <li><figure>
+          <img src="/photos/with-deborah.jpg" srcset="/photos/with-deborah-360.jpg 360w, /photos/with-deborah.jpg 720w" sizes="(max-width:46rem) 90vw, 20rem" width="720" height="900" loading="lazy" decoding="async" alt="Travis and Deborah Vought smiling outside a storefront at night, with an American flag beside them.">
+          <figcaption>With my wife, Deborah.</figcaption>
+        </figure></li>
+        <li><figure>
+          <img src="/photos/with-christy-orr.jpg" srcset="/photos/with-christy-orr-360.jpg 360w, /photos/with-christy-orr.jpg 576w" sizes="(max-width:46rem) 90vw, 20rem" width="576" height="720" loading="lazy" decoding="async" alt="Travis Vought and Christy Orr smiling in a marble hall beside a staircase.">
+          <figcaption>With Christy Orr, my running mate for lieutenant governor in the 2026 race for Ohio governor, at the Columbus Metropolitan Library.</figcaption>
+        </figure></li>
+      </ul>
+    </section>
+
   <section id="books">
     <h2>Books</h2>
     <p class="lede">Four short books of philosophy told as myth, about how systems drift, fail and hold, and a field manual for libertarian campaigns. All are on Amazon for Kindle.</p>
