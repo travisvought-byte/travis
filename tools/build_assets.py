@@ -59,7 +59,8 @@ SHORT = {
     "sponsor":   ("https://www.vethomeguard.org/sponsor.html", "Sponsor a guide",
                   "Sponsor a free guide through Veteran Home Guardians."),
     "github":    ("https://github.com/travisvought-byte", "Open data on GitHub", "The data and code behind the guides."),
-    "x":         ("https://x.com/TravisJonVought", "Travis Vought on X", "Travis Vought on X."),
+    "books":     ("https://www.amazon.com/stores/Travis-Vought/author/B0GMXWGX3B", "Books by Travis Vought",
+                  "The Alpha to Omega series and other books by Travis Vought on Amazon."),
 }
 
 REDIRECT = """<!DOCTYPE html>

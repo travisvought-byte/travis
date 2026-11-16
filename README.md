@@ -20,7 +20,7 @@ Easy to say out loud, print on a flyer or put on a billboard. Each one forwards 
 | travisvought.com/donate | Veteran Home Guardians donation page |
 | travisvought.com/sponsor | Sponsor a guide |
 | travisvought.com/github | github.com/travisvought-byte |
-| travisvought.com/x | x.com/TravisJonVought |
+| travisvought.com/books | Travis's books on Amazon |
 
 To add one, make a folder with the short name and copy any existing `index.html` into it, then change the address and title. Or add it to the list in `tools/build_assets.py` and run `python3 tools/build_assets.py . /tmp/render`, which also rebuilds the QR code, the 404 page and the robots and sitemap files.
 

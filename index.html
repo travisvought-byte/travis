@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Travis Vought | Free guides for veterans, people with disabilities, moms and communities</title>
-<meta name="description" content="Marine Corps veteran Travis Vought builds free, searchable guides that help veterans, people with disabilities, moms and local communities find real help close to home. Find every guide here.">
+<meta name="description" content="Marine Corps veteran and author Travis Vought builds free, searchable guides that help veterans, people with disabilities, moms and local communities find real help close to home. Find every guide and book here.">
 <link rel="canonical" href="https://travisvought.com/">
 <meta name="theme-color" content="#143229">
 <meta name="author" content="Travis Vought">
@@ -21,7 +21,6 @@
 <meta property="profile:first_name" content="Travis">
 <meta property="profile:last_name" content="Vought">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="@TravisJonVought">
 <meta name="twitter:title" content="Travis Vought">
 <meta name="twitter:description" content="Free guides that help veterans, people with disabilities, moms and local communities find real help close to home.">
 <meta name="twitter:image" content="https://travisvought.com/og.png">
@@ -29,7 +28,6 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="me" href="https://x.com/TravisJonVought">
 <link rel="me" href="https://github.com/travisvought-byte">
 <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -49,8 +47,53 @@
       "worksFor": {"@type": "NGO", "name": "Veteran Home Guardians", "url": "https://www.vethomeguard.org/"},
       "affiliation": [{"@type": "NGO", "name": "Mobility Independence Foundation", "url": "https://themif.org/"}],
       "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Certified Anti-Money Laundering Specialist (CAMS)"},
-      "knowsAbout": ["Veteran benefits and resources", "Disability resources", "Charitable bingo", "Ohio cannabis", "Anti-money laundering compliance", "Nonprofit planning"],
-      "sameAs": ["https://x.com/TravisJonVought", "https://github.com/travisvought-byte"]
+      "knowsAbout": ["Veteran benefits and resources", "Disability resources", "Charitable bingo", "Ohio cannabis", "Anti-money laundering compliance", "Nonprofit planning", "Systems thinking"],
+      "sameAs": ["https://www.amazon.com/stores/Travis-Vought/author/B0GMXWGX3B", "https://github.com/travisvought-byte"]
+    },
+    {
+      "@type": "BookSeries",
+      "@id": "https://travisvought.com/#alpha-to-omega",
+      "name": "Alpha to Omega",
+      "url": "https://www.amazon.com/dp/B0GM86BD9T",
+      "author": {"@id": "https://travisvought.com/#travis"}
+    },
+    {
+      "@type": "Book",
+      "name": "Atlantis to Eden",
+      "url": "https://www.amazon.com/dp/B0GMD5DJTL",
+      "author": {"@id": "https://travisvought.com/#travis"},
+      "isPartOf": {"@id": "https://travisvought.com/#alpha-to-omega"},
+      "bookFormat": "https://schema.org/EBook",
+      "datePublished": "2026-02-08"
+    },
+    {
+      "@type": "Book",
+      "name": "Atlantis to Eden, Book II: The Covenant of Exit",
+      "url": "https://www.amazon.com/dp/B0GM68M1Q2",
+      "author": {"@id": "https://travisvought.com/#travis"},
+      "isPartOf": {"@id": "https://travisvought.com/#alpha-to-omega"},
+      "bookFormat": "https://schema.org/EBook",
+      "datePublished": "2026-02-07"
+    },
+    {
+      "@type": "Book",
+      "name": "Atlantis to Eden, Book III: The Weight of No Crown",
+      "author": {"@id": "https://travisvought.com/#travis"},
+      "isPartOf": {"@id": "https://travisvought.com/#alpha-to-omega"},
+      "bookFormat": "https://schema.org/EBook"
+    },
+    {
+      "@type": "Book",
+      "name": "Elon's Inheritance: The Weight of Choosing",
+      "author": {"@id": "https://travisvought.com/#travis"},
+      "isPartOf": {"@id": "https://travisvought.com/#alpha-to-omega"},
+      "bookFormat": "https://schema.org/EBook"
+    },
+    {
+      "@type": "Book",
+      "name": "The Asymmetric Libertarian: A Field Manual for Winning in 2026",
+      "author": {"@id": "https://travisvought.com/#travis"},
+      "bookFormat": "https://schema.org/EBook"
     },
     {
       "@type": "WebSite",
@@ -164,6 +207,25 @@ h2{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(
 .record h3{font-family:var(--display);font-weight:700;font-size:1.25rem;line-height:1.25;margin:0 0 .25rem}
 .record p{margin:0;color:var(--mist);font-size:1.05rem}
 
+/* books: a loose stack of spines */
+.shelf{list-style:none;margin:0;padding:0;max-width:54rem}
+.shelf li + li{margin-top:.3rem}
+.shelf li:nth-child(2){margin-left:1.1rem;margin-right:-.4rem}
+.shelf li:nth-child(3){margin-left:.35rem;margin-right:.9rem}
+.shelf li:nth-child(4){margin-left:1.6rem;margin-right:.2rem}
+.shelf li:nth-child(5){margin-left:.6rem;margin-right:1.4rem}
+.spine{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.1rem 1.5rem;align-items:baseline;padding:1rem 1.4rem 1.1rem;text-decoration:none;background:var(--spruce);color:var(--paper);border:2px solid var(--spruce);transition:transform .25s cubic-bezier(.2,.75,.15,1)}
+.spine .no{grid-column:1/-1;font-family:var(--display);font-weight:600;font-size:.9rem}
+.spine b{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.12;letter-spacing:-.01em}
+.spine .go{font-family:var(--display);font-weight:650;font-size:.95rem;white-space:nowrap}
+.spine .blurb{grid-column:1/-1;max-width:38rem;font-size:1.02rem;line-height:1.5;margin-top:.2rem}
+.spine:hover,.spine:focus-visible{transform:translateX(.75rem)}
+.shelf li:nth-child(2) .spine{background:var(--brass);border-color:var(--brass);color:var(--spruce)}
+.shelf li:nth-child(3) .spine{background:var(--spruce-2);border-color:var(--spruce-2)}
+.shelf li:nth-child(4) .spine{background:var(--sheet);color:var(--spruce)}
+.shelf li:nth-child(5) .spine{background:var(--slate);border-color:var(--slate)}
+.shelf + .actions{margin-top:2.25rem}
+
 /* introduce */
 .kit{display:grid;grid-template-columns:minmax(0,1fr) 13rem;gap:2rem 3.5rem;align-items:start}
 .bio{margin:0;background:var(--sheet);border-left:.3rem solid var(--brass);padding:1.5rem 1.75rem;max-width:40rem}
@@ -195,6 +257,12 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
   .offers{grid-template-columns:1fr;gap:2rem}
   .record li{grid-template-columns:1fr}
   .kit{grid-template-columns:1fr}
+  .shelf li:nth-child(n){margin-left:0;margin-right:0}
+  .shelf li:nth-child(2),.shelf li:nth-child(4){margin-left:.6rem}
+  .shelf li:nth-child(3),.shelf li:nth-child(5){margin-right:.6rem}
+  .spine{padding:.9rem 1.1rem 1rem;grid-template-columns:1fr}
+  .spine .blurb{order:3}
+  .spine .go{order:4;margin-top:.45rem;text-decoration:underline;text-underline-offset:.2em}
   .qr img{max-width:10rem}
   .bio{padding:1.25rem 1.25rem}
 }
@@ -211,6 +279,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
   section{padding:1.5rem 0;break-inside:avoid-page}
   .hero{padding:0 0 1.5rem}
   .site{padding:.5rem 0;margin:0}
+  .shelf li:nth-child(n) .spine{background:#fff;color:#000;border-color:#999}
 }
 </style>
 </head>
@@ -224,6 +293,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
       <a href="#guides">Guides</a>
       <a href="#provide">What I provide</a>
       <a href="#background">Background</a>
+      <a href="#books">Books</a>
       <a href="#involved">Get in touch</a>
     </nav>
   </header>
@@ -235,7 +305,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
       <h1><span>Travis</span><span>Vought</span></h1>
       <div class="bar" aria-hidden="true"></div>
       <p class="promise">I build free, searchable guides that help people find real help close to home: veterans, people with disabilities, moms, and the halls and small organizations that hold a community together.</p>
-      <p class="where">Marine Corps veteran. Founder and Chair of Veteran Home Guardians. Marengo, Ohio.</p>
+      <p class="where">Marine Corps veteran and author. Founder and Chair of Veteran Home Guardians. Marengo, Ohio.</p>
 
       <nav class="routes" aria-labelledby="routes-title">
         <h2 id="routes-title">I'm looking for</h2>
@@ -353,13 +423,41 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
 </section>
 
 <div class="wrap">
+  <section id="books">
+    <h2>Books</h2>
+    <p class="lede">Four short books of philosophy told as myth, about how systems drift, fail and hold, and a field manual for libertarian campaigns. All are on Amazon for Kindle.</p>
+    <ul class="shelf">
+      <li><a class="spine" href="https://www.amazon.com/dp/B0GMD5DJTL">
+        <span class="no">Alpha to Omega, book 1</span>
+        <b>Atlantis to Eden</b><span class="go">On Amazon</span>
+        <span class="blurb">A short framework for why systems drift and fail, and what it takes to build ones that hold up for the people inside them.</span></a></li>
+      <li><a class="spine" href="https://www.amazon.com/dp/B0GM68M1Q2">
+        <span class="no">Alpha to Omega, book 2</span>
+        <b>The Covenant of Exit</b><span class="go">On Amazon</span>
+        <span class="blurb">A mythic fable about sovereignty, restraint and what real choice costs.</span></a></li>
+      <li><a class="spine" href="https://www.amazon.com/dp/B0GM86BD9T">
+        <span class="no">Alpha to Omega, book 3</span>
+        <b>The Weight of No Crown</b><span class="go">On Amazon</span>
+        <span class="blurb">A quiet fable about a world where no one will take the crown, and what that refusal asks of everyone.</span></a></li>
+      <li><a class="spine" href="https://www.amazon.com/dp/B0GM86BD9T">
+        <span class="no">Alpha to Omega, book 4</span>
+        <b>Elon’s Inheritance</b><span class="go">On Amazon</span>
+        <span class="blurb">Speculative philosophy about a future where guardianship ends and people inherit the full weight of choosing.</span></a></li>
+      <li><a class="spine" href="https://www.amazon.com/stores/Travis-Vought/author/B0GMXWGX3B">
+        <span class="no">Field manual</span>
+        <b>The Asymmetric Libertarian</b><span class="go">On Amazon</span>
+        <span class="blurb">A field manual for winning in 2026, written for libertarian candidates and campaigns.</span></a></li>
+    </ul>
+    <p class="actions"><a class="btn solid" href="https://www.amazon.com/stores/Travis-Vought/author/B0GMXWGX3B">All my books on Amazon</a></p>
+  </section>
+
   <section id="introduce">
     <h2>Introduce me</h2>
     <p class="lede">For podcast hosts, event organizers and anyone passing my name along. Copy the bio, send the page, or print the code.</p>
     <div class="kit">
       <div>
         <blockquote class="bio" id="bio">
-          <p>Travis Vought is a Marine Corps veteran and the founder and chair of Veteran Home Guardians, an Ohio nonprofit. He served eight and a half years in the Marines, including intelligence work in Iraq and Afghanistan, then spent eleven years in anti-money-laundering compliance at J.P. Morgan Asset Management. Today he builds free, searchable guides that help veterans, people with disabilities, moms and local communities find real help close to home. He lives in Marengo, Ohio.</p>
+          <p>Travis Vought is a Marine Corps veteran and the founder and chair of Veteran Home Guardians, an Ohio nonprofit. He served eight and a half years in the Marines, including intelligence work in Iraq and Afghanistan, then spent eleven years in anti-money-laundering compliance at J.P. Morgan Asset Management. Today he builds free, searchable guides that help veterans, people with disabilities, moms and local communities find real help close to home. He is also the author of the Alpha to Omega series, which begins with Atlantis to Eden. He lives in Marengo, Ohio.</p>
         </blockquote>
         <p class="actions">
           <button class="btn solid" type="button" id="copy-bio">Copy bio</button>
@@ -385,7 +483,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
     </ul>
     <p class="actions">
       <a class="btn solid" href="https://www.vethomeguard.org/contact.html">Get in touch</a>
-      <a class="btn" href="https://x.com/TravisJonVought">Message me on X</a>
+      <a class="btn" href="https://www.vethomeguard.org/donate.html">Donate</a>
     </p>
   </section>
 </div>
@@ -394,8 +492,8 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
 <div class="wrap">
   <footer>
     <p class="elsewhere">
-      <a href="https://x.com/TravisJonVought">@TravisJonVought</a>
-      <a href="https://x.com/Vethomeguard">@Vethomeguard</a>
+      <a href="https://www.amazon.com/stores/Travis-Vought/author/B0GMXWGX3B">Books on Amazon</a>
+      <a href="https://www.vethomeguard.org/">Veteran Home Guardians</a>
       <a href="https://github.com/travisvought-byte">GitHub</a>
     </p>
     <p>Travis Vought, Marengo, Ohio.</p>
