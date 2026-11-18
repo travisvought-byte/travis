@@ -36,10 +36,6 @@ To add one, make a folder with the short name and copy any existing `index.html`
 - `sitemap.xml`, `robots.txt`: help search engines find the page.
 - `CNAME`: tells GitHub Pages to serve the site at travisvought.com.
 
-## Help on every page
-
-`index.html` and `404.html` each carry one short "Need help now?" block: 988 (call or text; veterans press 1), 211 then 6 for homeless services, HUD's Find Shelter tool, and the National Call Center for Homeless Veterans (1-877-424-3838). The wording, its sources and the date they were read are in `tools/build_assets.py` (`help_now`), which writes the block into the 404 page. On `index.html` it is pasted by hand directly above the footer; keep the two the same. Short links only forward, so they do not carry it.
-
 ## Visit counts
 
 Every page and short link reports to the shared GoatCounter dashboard at https://travisvought.goatcounter.com/ under paths that start `/travisvought.com/` (for example `/travisvought.com/weed` for the short link printed on cannabis flyers). Short links count the visit, then forward within 1.2 seconds; without JavaScript the page still forwards after 2 seconds. The counter snippet lives in `tools/build_assets.py` (`COUNTER`) and is pasted once into `index.html`.
