@@ -111,6 +111,30 @@ LASTMOD = "2026-11-16"
     '</urlset>\n')
 (repo / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n")
 
+# ---------- help on every page ----------
+# Owner direction, November 17, 2026: every site carries help for people thinking about suicide and people
+# with no safe place to sleep. This block sits above the footer of index.html (pasted there by hand, with a
+# bottom margin of 2.5rem) and at the end of the 404 page below. Short links only forward, so they do not carry it.
+# Each line was read on its source page on November 17, 2026:
+#   988lifeline.org: call or text 988, any time.          veteranscrisisline.net: dial 988, then press 1.
+#   hud.gov/contactus: dial 2-1-1 and press 6 for homeless services; the Find Shelter tool.
+#   usa.gov/emergency-housing: National Call Center for Homeless Veterans, 1-877-424-3838, 24 hours a day.
+_HELP_LINK = ' style="color:#143229;font-weight:700;text-decoration:underline;white-space:nowrap"'
+_HELP_WRAP = ' style="color:#143229;font-weight:700;text-decoration:underline"'
+
+
+def help_now(margin):
+    return ('<aside class="help-now" aria-label="Need help now?" style="box-sizing:border-box;margin:' + margin + ';padding:.85rem 1.1rem;'
+            'border:1px solid #cfd8cd;border-left:6px solid #7a1f1f;border-radius:6px;background:#fff;color:#143229;'
+            'font-size:1rem;line-height:1.55;text-align:left">'
+            '<strong>Need help now?</strong> Thinking about suicide, or in any crisis: '
+            '<a href="tel:988"' + _HELP_LINK + '>call</a> or <a href="sms:988"' + _HELP_LINK + '>text 988</a>, any time. '
+            'Veterans: dial 988, then press 1. No safe place to sleep tonight: '
+            '<a href="tel:211"' + _HELP_LINK + '>dial 211</a> and press 6 for homeless services, or use '
+            '<a href="https://www.hud.gov/findshelter"' + _HELP_WRAP + '>HUD’s Find Shelter tool</a>. Veterans: '
+            '<a href="tel:+18774243838"' + _HELP_LINK + '>1-877-424-3838</a>, 24 hours a day.</aside>')
+
+
 # ---------- 404 ----------
 (repo / "404.html").write_text("""<!DOCTYPE html>
 <html lang="en">
@@ -150,6 +174,7 @@ p{margin:0 0 1rem;color:#55665e}
 <li><a href="https://ohioweed.org/">Cannabis in Ohio</a></li>
 </ul>
 <p><a class="home" href="/">Go to travisvought.com</a></p>
+""" + help_now("2.5rem 0 0") + """
 </main>
 </body>
 </html>
