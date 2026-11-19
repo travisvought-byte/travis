@@ -108,6 +108,7 @@ LASTMOD = "2026-11-16"
     '<?xml version="1.0" encoding="UTF-8"?>\n'
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     f'  <url><loc>{SITE}</loc><lastmod>{LASTMOD}</lastmod></url>\n'
+    f'  <url><loc>{SITE}privacy/</loc><lastmod>2026-11-19</lastmod></url>\n'
     '</urlset>\n')
 (repo / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n")
 

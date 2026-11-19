@@ -246,10 +246,13 @@ h2{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(
 .group h3{font-family:var(--display);font-weight:600;font-size:1rem;margin:.35rem 0 1rem;color:var(--slate)}
 .sites{list-style:none;margin:0;padding:0}
 .sites li + li{border-top:1px solid var(--rule)}
-.site{display:grid;grid-template-columns:1fr auto;gap:.25rem 1.5rem;align-items:baseline;padding:1rem .9rem;margin:0 -.9rem;text-decoration:none;transition:background .15s,color .15s}
+.site{display:grid;grid-template-columns:auto 1fr auto;gap:.25rem 1.1rem;align-items:center;padding:1rem .9rem;margin:0 -.9rem;text-decoration:none;transition:background .15s,color .15s}
 .site b{font-family:var(--display);font-stretch:108%;font-weight:700;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.15;letter-spacing:-.01em}
 .site .url{font-family:var(--display);font-size:.95rem;color:var(--brass-ink);white-space:nowrap}
-.site .what{grid-column:1/-1;max-width:36rem;font-size:1.05rem;line-height:1.5;color:var(--slate)}
+.site .what{grid-column:2/-1;max-width:36rem;font-size:1.05rem;line-height:1.5;color:var(--slate)}
+.site .mark{grid-row:1/span 2;align-self:start;width:3rem;height:3rem;border-radius:.9rem;display:grid;place-items:center;background:var(--spruce);color:var(--brass);transition:background .15s,color .15s,transform .25s}
+.site .mark svg{width:1.6rem;height:1.6rem}
+.site:hover .mark,.site:focus-visible .mark{background:var(--brass);color:var(--spruce);transform:rotate(-6deg) scale(1.06)}
 .site:hover,.site:focus-visible{background:var(--spruce);color:var(--paper)}
 .site:hover .what,.site:focus-visible .what{color:var(--mist)}
 .site:hover .url,.site:focus-visible .url{color:var(--brass)}
@@ -321,7 +324,8 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
   section{padding:3.25rem 0}
   .group{grid-template-columns:1fr}
   .group h3{margin-bottom:.25rem}
-  .site{grid-template-columns:1fr}
+  .site{grid-template-columns:auto 1fr}
+  .site .url{grid-column:2}
   .offers{grid-template-columns:1fr;gap:2rem}
   .record li{grid-template-columns:1fr}
   .intro{grid-template-columns:1fr;gap:1.5rem}
@@ -344,6 +348,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important;animation:none!important}
+  .site:hover .mark,.site:focus-visible .mark{transform:none}
 }
 @media print{
   body{background:#fff;font-size:11pt}
@@ -356,6 +361,9 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
   .portrait img{box-shadow:none}
   .scene,#company{display:none}
   .site{padding:.5rem 0;margin:0}
+  .site .mark{display:none}
+  .site{display:block}
+  .site b,.site .what{display:block}
   .shelf li:nth-child(n) .spine{background:#fff;color:#000;border-color:#999}
 }
 </style>
@@ -412,10 +420,10 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>Veterans and seniors</h3>
         <ul class="sites">
           <li><a class="site" href="https://www.vethomeguard.org/">
-            <b>Veteran Home Guardians</b><span class="url">vethomeguard.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6zM9 12l2 2 4-4"/></svg></span><b>Veteran Home Guardians</b><span class="url">vethomeguard.org</span>
             <span class="what">An Ohio nonprofit with free guides to veteran benefits, care, housing and support, and paid veteran-to-veteran visits for isolated veterans in nursing homes.</span></a></li>
           <li><a class="site" href="https://guide.vethomeguard.org/">
-            <b>Veteran Resident Resource Guide</b><span class="url">guide.vethomeguard.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-.5V19c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5zM12 6v13.5"/></svg></span><b>Veteran Resident Resource Guide</b><span class="url">guide.vethomeguard.org</span>
             <span class="what">Benefits, care, housing and local offices for senior and disabled veterans, state by state. Written to hand to a resident, a family or a nursing home.</span></a></li>
         </ul>
       </div>
@@ -424,10 +432,10 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>Disability and mobility</h3>
         <ul class="sites">
           <li><a class="site" href="https://mobilitytalk.org/">
-            <b>Mobility Talk</b><span class="url">mobilitytalk.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 5.5a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5zM11 8v6h6l2 5M11 11h5M8.6 10.2A5.5 5.5 0 1 0 15 18"/></svg></span><b>Mobility Talk</b><span class="url">mobilitytalk.org</span>
             <span class="what">Help for people with disabilities in every state: benefits, equipment and repairs, home access, rides, in-home help, work, vision and hearing services, and your rights.</span></a></li>
           <li><a class="site" href="https://themif.org/">
-            <b>Mobility Independence Foundation</b><span class="url">themif.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM15.5 8.5l-2 5-5 2 2-5z"/></svg></span><b>Mobility Independence Foundation</b><span class="url">themif.org</span>
             <span class="what">A foundation working on independence through mobility. I serve as its Finance Officer and help with planning and operations.</span></a></li>
         </ul>
       </div>
@@ -436,7 +444,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>Moms and families</h3>
         <ul class="sites">
           <li><a class="site" href="https://www.yogamomtalk.com/">
-            <b>Yoga Mom Talk</b><span class="url">yogamomtalk.com</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 20s-7-4.4-9-9a4.5 4.5 0 0 1 9-3 4.5 4.5 0 0 1 9 3c-2 4.6-9 9-9 9z"/></svg></span><b>Yoga Mom Talk</b><span class="url">yogamomtalk.com</span>
             <span class="what">A place for moms to connect, with real help when you need it: food, child care, health coverage, disability help and crisis lines in all 50 states. OhioMom is its Ohio branch. Founded by Deborah Vought.</span></a></li>
         </ul>
       </div>
@@ -445,10 +453,10 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>Bingo players and halls</h3>
         <ul class="sites">
           <li><a class="site" href="https://www.findbingo.org/">
-            <b>Find Bingo</b><span class="url">findbingo.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM10.8 11.5l1.2-1v4M7 3l2 2M17 3l-2 2"/></svg></span><b>Find Bingo</b><span class="url">findbingo.org</span>
             <span class="what">Type a ZIP code and find bingo games near you, state by state. The Ohio finder is at findbingo.org/ohio.</span></a></li>
           <li><a class="site" href="https://www.ohiobingo.org/">
-            <b>Ohio Bingo</b><span class="url">ohiobingo.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 4h16v16H4zM4 9.3h16M4 14.6h16M9.3 4v16M14.6 4v16"/></svg></span><b>Ohio Bingo</b><span class="url">ohiobingo.org</span>
             <span class="what">Find a game, fill a hall, fund a cause. Search Ohio bingo by ZIP code, day and time. Listings and promotion help are free for halls.</span></a></li>
         </ul>
       </div>
@@ -457,10 +465,10 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>Cannabis information</h3>
         <ul class="sites">
           <li><a class="site" href="https://ohioweed.org/">
-            <b>OhioWeed</b><span class="url">ohioweed.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21v-6M12 15c-1-4-1-8 0-12 1 4 1 8 0 12zM12 15c-3-2-6-2.5-9-1.5 2.5 2 5.5 2.5 9 1.5zM12 15c3-2 6-2.5 9-1.5-2.5 2-5.5 2.5-9 1.5zM12 15c-2.5-2.5-4-6-4-9.5 2.5 2 4 5.5 4 9.5zM12 15c2.5-2.5 4-6 4-9.5-2.5 2-4 5.5-4 9.5z"/></svg></span><b>OhioWeed</b><span class="url">ohioweed.org</span>
             <span class="what">A practical Ohio cannabis guide: a source-linked business directory, licensed dispensary locations, events, and plain-language links to Ohio's rules.</span></a></li>
           <li><a class="site" href="https://the-reefer.com/">
-            <b>The Reefer</b><span class="url">the-reefer.com</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 7.5a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5zM12 7.5V21M8 11h8M4 13c0 4.4 3.6 8 8 8s8-3.6 8-8M4 13l-1.5 2M20 13l1.5 2"/></svg></span><b>The Reefer</b><span class="url">the-reefer.com</span>
             <span class="what">Plain-language cannabis answers for all 50 states and DC: what is legal, where to buy, clearing a record and where to get help, each traced to a named source.</span></a></li>
         </ul>
       </div>
@@ -469,7 +477,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>Open data</h3>
         <ul class="sites">
           <li><a class="site" href="https://github.com/travisvought-byte">
-            <b>The data behind the guides</b><span class="url">github.com/travisvought-byte</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M8 4C5.5 4 6 8 4 9c2 1 1.5 5 4 5M16 4c2.5 0 2 4 4 5-2 1-1.5 5-4 5M10 20l4-12"/></svg></span><b>The data behind the guides</b><span class="url">github.com/travisvought-byte</span>
             <span class="what">Every guide's data and code is public. Download it, check it, or build on it.</span></a></li>
         </ul>
       </div>
@@ -611,6 +619,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
       <a href="https://www.amazon.com/stores/Travis-Vought/author/B0GMXWGX3B">Books on Amazon</a>
       <a href="https://www.vethomeguard.org/">Veteran Home Guardians</a>
       <a href="https://github.com/travisvought-byte">GitHub</a>
+      <a href="/privacy/">Privacy</a>
     </p>
     <p>Travis Vought, Marengo, Ohio.</p>
     <p>Free to share. Please link back to the guide you used.</p>
