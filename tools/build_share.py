@@ -85,7 +85,7 @@ snippet = ('<h2>Free help guides</h2>\n<ul>\n' + "\n".join(links) + '\n</ul>\n'
 
 COUNTER = ('<script>window.goatcounter={path:function(){return "/travisvought.com"+location.pathname},'
            'referrer:function(){try{var u=new URL(document.referrer);return u.origin+u.pathname}catch(e){return ""}}};</script>'
-           '<script data-goatcounter="https://travisvought.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>')
+           '<script data-goatcounter="https://vhg-guide.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>')
 
 DESC = ("Help someone find help: pick the right free guide, copy a reply to paste, add the guides to your website, "
         "or print a one-page sheet for a bulletin board.")

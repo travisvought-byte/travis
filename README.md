@@ -39,4 +39,4 @@ To add one, make a folder with the short name and copy any existing `index.html`
 
 ## Visit counts
 
-Every page and short link reports to the shared GoatCounter dashboard at https://travisvought.goatcounter.com/ under paths that start `/travisvought.com/` (for example `/travisvought.com/weed` for the short link printed on cannabis flyers). Short links count the visit, then forward within 1.2 seconds; without JavaScript the page still forwards after 2 seconds. The counter snippet lives in `tools/build_assets.py` (`COUNTER`) and is pasted once into `index.html`.
+Every page and short link reports to the shared GoatCounter dashboard at https://vhg-guide.goatcounter.com/ under paths that start `/travisvought.com/` (for example `/travisvought.com/weed` for the short link printed on cannabis flyers). Short links count the visit, then forward within 1.2 seconds; without JavaScript the page still forwards after 2 seconds. The counter snippet lives in `tools/build_assets.py` (`COUNTER`) and is pasted once into `index.html`.

@@ -68,7 +68,7 @@ SHORT = {
 COUNTER = (
     '<script>window.goatcounter={path:function(){return "/travisvought.com"+location.pathname},'
     'referrer:function(){try{var u=new URL(document.referrer);return u.origin+u.pathname}catch(e){return ""}}};</script>'
-    '<script data-goatcounter="https://travisvought.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
+    '<script data-goatcounter="https://vhg-guide.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
 )
 
 # A short link counts its visit (so flyers and billboards can be compared), then forwards.
@@ -86,7 +86,7 @@ REDIRECT = """<!DOCTYPE html>
 <meta http-equiv="refresh" content="2; url={dest}">
 <script>(function(){{var done=false;function go(){{if(!done){{done=true;location.replace({dest_js})}}}}
 var i=new Image();i.onload=i.onerror=go;setTimeout(go,1200);
-i.src="https://travisvought.goatcounter.com/count?p="+encodeURIComponent("/travisvought.com/{slug}")+"&t="+encodeURIComponent("Short link: {slug}")+"&rnd="+Math.random().toString(36).slice(2)}})();</script>
+i.src="https://vhg-guide.goatcounter.com/count?p="+encodeURIComponent("/travisvought.com/{slug}")+"&t="+encodeURIComponent("Short link: {slug}")+"&rnd="+Math.random().toString(36).slice(2)}})();</script>
 </head>
 <body>
 <p><a href="{dest}">Continue to {title}</a></p>
