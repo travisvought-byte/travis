@@ -103,12 +103,13 @@ for slug, (dest, title, desc) in SHORT.items():
 
 # ---------- sitemap and robots ----------
 # Change LASTMOD to the day index.html last changed in a way worth a search engine's second look.
-LASTMOD = "2026-11-16"
+LASTMOD = "2026-11-21"
 (repo / "sitemap.xml").write_text(
     '<?xml version="1.0" encoding="UTF-8"?>\n'
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     f'  <url><loc>{SITE}</loc><lastmod>{LASTMOD}</lastmod></url>\n'
     f'  <url><loc>{SITE}privacy/</loc><lastmod>2026-11-19</lastmod></url>\n'
+    f'  <url><loc>{SITE}share/</loc><lastmod>2026-11-21</lastmod></url>\n'
     '</urlset>\n')
 (repo / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n")
 
