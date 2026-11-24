@@ -50,7 +50,7 @@ h3{font-size:1.25rem;margin:0 0 .35rem}
 .qr svg{display:block;width:100%;height:auto;background:#fff}
 .who{margin:0 0 .6rem;color:var(--slate);font-size:1rem}
 .lbl{display:block;font-family:var(--display);font-size:.9rem;font-weight:600;margin:0 0 .25rem}
-textarea{width:100%;font:inherit;font-size:1rem;line-height:1.45;padding:.6rem;border:1px solid var(--rule);background:var(--paper);color:var(--spruce);resize:vertical}
+textarea{width:100%;font:inherit;font-size:1rem;line-height:1.45;padding:.6rem;border:1px solid var(--slate);background:var(--paper);color:var(--spruce);resize:vertical}
 .btns{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0 0}
 button{font-family:var(--display);font-weight:650;font-size:1rem;min-height:2.75rem;padding:.45rem 1rem;background:var(--sheet);color:var(--spruce);border:2px solid var(--spruce);cursor:pointer}
 button:hover,button:focus-visible{background:var(--spruce);color:var(--paper)}
@@ -74,13 +74,14 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
   .sheet .for{display:block;font-size:9.5pt;line-height:1.3}
   .sheet .foot{margin-top:12pt;font-size:9.5pt}
 }
-</style>
+.skip{position:absolute;left:-999px;top:0}.skip:focus{left:1rem;top:1rem;background:#fff;color:#14303f;padding:.5rem 1rem;z-index:5;outline:3px solid #a07014}</style>
 <script>window.goatcounter={path:function(){return "/travisvought.com"+location.pathname},referrer:function(){try{var u=new URL(document.referrer);return u.origin+u.pathname}catch(e){return ""}}};</script><script data-goatcounter="https://vhg-guide.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 <div class="wrap screen">
-<p class="top"><a href="/">Travis Vought</a></p>
-<main>
+<header><p class="top"><a href="/">Travis Vought</a></p></header>
+<main id="main">
 <h1>Help someone find help</h1>
 <p class="lede">When someone asks where to turn, you can point them to a free guide in a few seconds. Pick the guide, copy the reply, paste it. Every guide is free, needs no sign-up, and is built from public sources.</p>
 <ol class="steps">
