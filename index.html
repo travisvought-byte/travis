@@ -278,6 +278,9 @@ h2{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(
 .offers{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem 3rem;margin:0;padding:0;list-style:none}
 .offers h3{font-family:var(--display);font-weight:700;font-size:1.3rem;line-height:1.2;margin:0 0 .4rem;padding-top:.9rem;border-top:.3rem solid var(--brass)}
 .offers p{margin:0;max-width:30rem}
+.offers h3{display:flex;align-items:center;gap:.75rem}
+.sym{flex:none;width:2.5rem;height:2.5rem;border-radius:.75rem;display:grid;place-items:center;background:var(--spruce);color:var(--brass)}
+.sym svg{width:1.4rem;height:1.4rem}
 
 /* buttons */
 .actions{margin:2.75rem 0 0;display:flex;gap:.75rem 1rem;flex-wrap:wrap;align-items:center}
@@ -290,7 +293,14 @@ h2{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(
 .service .lede{color:#c3d1c6}
 .service + section{border-top:0}
 .record{list-style:none;margin:0;padding:0;max-width:48rem}
-.record li{display:grid;grid-template-columns:9.5rem 1fr;gap:0 2rem;padding:1.15rem 0;border-top:1px solid #35594c}
+.record li{position:relative;display:grid;grid-template-columns:9.5rem 1fr;gap:0 2rem;padding:1.15rem 0 1.15rem 3.75rem;border-top:0}
+/* the timeline: a rail down the left with a symbol at each stop; the list itself carries the dates and words */
+.record li::before{content:"";position:absolute;left:1.2rem;top:0;bottom:0;border-left:2px solid #5a8474}
+.record li:first-child::before{top:1.9rem}
+.record li:last-child::before{bottom:auto;height:1.9rem}
+.record li::after{content:"";position:absolute;left:3.75rem;right:0;top:0;border-top:1px solid #35594c}
+.record .stop{position:absolute;left:0;top:.75rem;width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;background:var(--spruce);border:2px solid var(--brass);color:var(--brass)}
+.record .stop svg{width:1.3rem;height:1.3rem}
 .record .when{font-family:var(--display);font-weight:600;color:var(--brass);font-size:1rem;padding-top:.15rem}
 .record h3{font-family:var(--display);font-weight:700;font-size:1.25rem;line-height:1.25;margin:0 0 .25rem}
 .record p{margin:0;color:var(--mist);font-size:1.05rem}
@@ -327,7 +337,8 @@ h2{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(
 
 /* get involved */
 .ways{max-width:44rem;margin:0;padding:0;list-style:none}
-.ways li{padding:1rem 0;border-top:1px solid var(--rule)}
+.ways li{position:relative;padding:1rem 0 1rem 3.5rem;min-height:4.5rem;border-top:1px solid var(--rule)}
+.ways .sym{position:absolute;left:0;top:1rem}
 .ways strong{font-family:var(--display);font-weight:700}
 
 footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;color:var(--slate);font-size:.95rem}
@@ -344,7 +355,8 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
   .site{grid-template-columns:auto 1fr}
   .site .url{grid-column:2}
   .offers{grid-template-columns:1fr;gap:2rem}
-  .record li{grid-template-columns:1fr}
+  .record li{grid-template-columns:1fr;padding-left:3.5rem}
+  .record li::after{left:3.5rem}
   .intro{grid-template-columns:1fr;gap:1.5rem}
   .intro .say,.portrait{grid-column:1;grid-row:auto}
   .portrait{width:9rem;margin:0}
@@ -362,6 +374,9 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
   .qr img{max-width:10rem}
   .bio{padding:1.25rem 1.25rem}
 }
+@media (forced-colors:active){
+  .sym{border:1px solid CanvasText}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important;animation:none!important}
@@ -372,7 +387,8 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
   .top nav,.skip,.routes,.actions,.status,.qr figcaption a{display:none!important}
   .service{background:#fff;color:#000}
   .service .lede,.record p{color:#333}
-  .record li{border-color:#ccc}
+  .record li::after,.record li::before{border-color:#ccc}
+  .record .stop,.sym{background:#fff;color:#000;border:1px solid #999}
   section{padding:1.5rem 0;break-inside:avoid-page}
   .hero{padding:0 0 1.5rem}
   .portrait img{box-shadow:none}
@@ -442,10 +458,10 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>Veterans and seniors</h3>
         <ul class="sites">
           <li><a class="site" href="https://www.vethomeguard.org/">
-            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6zM9 12l2 2 4-4"/></svg></span><b>Veteran Home Guardians</b><span class="url">vethomeguard.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#vhg"/></svg></span><b>Veteran Home Guardians</b><span class="url">vethomeguard.org</span>
             <span class="what">An Ohio nonprofit with free guides to veteran benefits, care, housing and support, and paid veteran-to-veteran visits for isolated veterans in nursing homes.</span></a></li>
           <li><a class="site" href="https://guide.vethomeguard.org/">
-            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-.5V19c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5zM12 6v13.5"/></svg></span><b>Veteran Resident Resource Guide</b><span class="url">guide.vethomeguard.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#guide"/></svg></span><b>Veteran Resident Resource Guide</b><span class="url">guide.vethomeguard.org</span>
             <span class="what">Benefits, care, housing and local offices for senior and disabled veterans, state by state. Written to hand to a resident, a family or a nursing home.</span></a></li>
         </ul>
       </div>
@@ -454,10 +470,10 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>Disability and mobility</h3>
         <ul class="sites">
           <li><a class="site" href="https://mobilitytalk.org/">
-            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 5.5a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5zM11 8v6h6l2 5M11 11h5M8.6 10.2A5.5 5.5 0 1 0 15 18"/></svg></span><b>Mobility Talk</b><span class="url">mobilitytalk.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#mobility"/></svg></span><b>Mobility Talk</b><span class="url">mobilitytalk.org</span>
             <span class="what">Help for people with disabilities in every state: benefits, equipment and repairs, home access, rides, in-home help, work, vision and hearing services, and your rights.</span></a></li>
           <li><a class="site" href="https://themif.org/">
-            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM15.5 8.5l-2 5-5 2 2-5z"/></svg></span><b>Mobility Independence Foundation</b><span class="url">themif.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#mif"/></svg></span><b>Mobility Independence Foundation</b><span class="url">themif.org</span>
             <span class="what">A foundation working on independence through mobility. I serve as its Finance Officer and help with planning and operations.</span></a></li>
         </ul>
       </div>
@@ -466,7 +482,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>Moms and families</h3>
         <ul class="sites">
           <li><a class="site" href="https://www.yogamomtalk.com/">
-            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 20s-7-4.4-9-9a4.5 4.5 0 0 1 9-3 4.5 4.5 0 0 1 9 3c-2 4.6-9 9-9 9z"/></svg></span><b>Yoga Mom Talk</b><span class="url">yogamomtalk.com</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#moms"/></svg></span><b>Yoga Mom Talk</b><span class="url">yogamomtalk.com</span>
             <span class="what">A place for moms to connect, with real help when you need it: food, child care, health coverage, disability help and crisis lines in all 50 states. OhioMom is its Ohio branch. Founded by Deborah Vought.</span></a></li>
         </ul>
       </div>
@@ -475,7 +491,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>First Peoples</h3>
         <ul class="sites">
           <li><a class="site" href="https://ninas-map.com/">
-            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></svg></span><b>Nina's Map</b><span class="url">ninas-map.com</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#ninas-map"/></svg></span><b>Nina's Map</b><span class="url">ninas-map.com</span>
             <span class="what">A free map for First Peoples: Nations, Native clinics, community centers, tribal colleges and tribal lands, with a filter for places that don't ask for a tribal card. Dedicated to Nina, and hers to share.</span></a></li>
         </ul>
       </div>
@@ -484,10 +500,10 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>Bingo players and halls</h3>
         <ul class="sites">
           <li><a class="site" href="https://www.findbingo.org/">
-            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM10.8 11.5l1.2-1v4M7 3l2 2M17 3l-2 2"/></svg></span><b>Find Bingo</b><span class="url">findbingo.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#find-bingo"/></svg></span><b>Find Bingo</b><span class="url">findbingo.org</span>
             <span class="what">Type a ZIP code and find bingo games near you, state by state. The Ohio finder is at findbingo.org/ohio.</span></a></li>
           <li><a class="site" href="https://www.ohiobingo.org/">
-            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 4h16v16H4zM4 9.3h16M4 14.6h16M9.3 4v16M14.6 4v16"/></svg></span><b>Ohio Bingo</b><span class="url">ohiobingo.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#ohio-bingo"/></svg></span><b>Ohio Bingo</b><span class="url">ohiobingo.org</span>
             <span class="what">Find a game, fill a hall, fund a cause. Search Ohio bingo by ZIP code, day and time. Listings and promotion help are free for halls.</span></a></li>
         </ul>
       </div>
@@ -496,10 +512,10 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>Cannabis information</h3>
         <ul class="sites">
           <li><a class="site" href="https://ohioweed.org/">
-            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21v-6M12 15c-1-4-1-8 0-12 1 4 1 8 0 12zM12 15c-3-2-6-2.5-9-1.5 2.5 2 5.5 2.5 9 1.5zM12 15c3-2 6-2.5 9-1.5-2.5 2-5.5 2.5-9 1.5zM12 15c-2.5-2.5-4-6-4-9.5 2.5 2 4 5.5 4 9.5zM12 15c2.5-2.5 4-6 4-9.5-2.5 2-4 5.5-4 9.5z"/></svg></span><b>OhioWeed</b><span class="url">ohioweed.org</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#ohioweed"/></svg></span><b>OhioWeed</b><span class="url">ohioweed.org</span>
             <span class="what">A practical Ohio cannabis guide: a source-linked business directory, licensed dispensary locations, events, and plain-language links to Ohio's rules.</span></a></li>
           <li><a class="site" href="https://the-reefer.com/">
-            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 7.5a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5zM12 7.5V21M8 11h8M4 13c0 4.4 3.6 8 8 8s8-3.6 8-8M4 13l-1.5 2M20 13l1.5 2"/></svg></span><b>The Reefer</b><span class="url">the-reefer.com</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#reefer"/></svg></span><b>The Reefer</b><span class="url">the-reefer.com</span>
             <span class="what">Plain-language cannabis answers for all 50 states and DC: what is legal, where to buy, clearing a record and where to get help, each traced to a named source.</span></a></li>
         </ul>
       </div>
@@ -508,7 +524,7 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
         <h3>Open data</h3>
         <ul class="sites">
           <li><a class="site" href="https://github.com/travisvought-byte">
-            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M8 4C5.5 4 6 8 4 9c2 1 1.5 5 4 5M16 4c2.5 0 2 4 4 5-2 1-1.5 5-4 5M10 20l4-12"/></svg></span><b>The data behind the guides</b><span class="url">github.com/travisvought-byte</span>
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#data"/></svg></span><b>The data behind the guides</b><span class="url">github.com/travisvought-byte</span>
             <span class="what">Every guide's data and code is public. Download it, check it, or build on it.</span></a></li>
         </ul>
       </div>
@@ -518,13 +534,13 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
       <h2>What I provide</h2>
       <p class="lede" id="partners">Running a nonprofit, a hall or a business, or looking to partner? The guides are free and stay free. When an organization needs more than a listing, this is the work I take on.</p>
       <ul class="offers">
-        <li><h3>Resource guides and directories</h3>
+        <li><h3><span class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#directory"/></svg></span>Resource guides and directories</h3>
           <p>Researched, searchable, and built to hand to the person who needs it. I can build one for a county, a cause or an industry, and set it up to stay current.</p></li>
-        <li id="cannabis"><h3>Compliance and risk review</h3>
+        <li id="cannabis"><h3><span class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#review"/></svg></span>Compliance and risk review</h3>
           <p>Eleven years of anti-money-laundering and know-your-customer work at J.P. Morgan, applied to regulated fields that get little support: charitable gaming, cannabis and small nonprofits. Cannabis businesses can also start with <a href="https://ohioweed.org/find.html?for=business">OhioWeed's business resources</a>.</p></li>
-        <li id="bingo-halls"><h3>Help for bingo halls</h3>
+        <li id="bingo-halls"><h3><span class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#bingo-card"/></svg></span>Help for bingo halls</h3>
           <p>I ran and promoted bingo at the Marengo American Legion for three years. I help halls bring in more players for less advertising money, and look over operations against Ohio's bingo rules. Listings and promotion help on <a href="https://www.ohiobingo.org/halls.html">Ohio Bingo</a> are free.</p></li>
-        <li><h3>Nonprofit planning</h3>
+        <li><h3><span class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#plan"/></svg></span>Nonprofit planning</h3>
           <p>Capital plans, funding proposals, sponsor and relationship tracking, and practical use of AI as research support, with people keeping the judgment.</p></li>
       </ul>
       <p class="actions"><a class="btn solid" href="https://www.vethomeguard.org/contact.html">Start a conversation</a> <a class="btn" href="https://www.vethomeguard.org/partner.html">Partner with Veteran Home Guardians</a></p>
@@ -537,17 +553,17 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
     <p class="lede">Intelligence work and compliance work come down to one habit: find out what is true, write it down so someone else can check it, and act on it. The guides are that habit pointed at everyday problems.</p>
     <div class="served">
     <ol class="record">
-      <li><span class="when">Growing up</span>
+      <li><span class="stop" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#tent"/></svg></span><span class="when">Growing up</span>
         <div><h3>Upstate New York, Eagle Scout</h3><p>Raised around Horseheads and Elmira, one of six kids.</p></div></li>
-      <li><span class="when">2003 to 2011</span>
+      <li><span class="stop" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#flag"/></svg></span><span class="when">2003 to 2011</span>
         <div><h3>United States Marine Corps, Staff Sergeant</h3><p>Administration, then counterintelligence and human intelligence. Deployed to Fallujah, Iraq in 2007 and to Helmand, Afghanistan in 2009 and 2010 as a regimental intelligence chief.</p></div></li>
-      <li><span class="when">2011 to 2012</span>
+      <li><span class="stop" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#search"/></svg></span><span class="when">2011 to 2012</span>
         <div><h3>Intelligence analyst, Helmand</h3><p>A further year in Afghanistan as a civilian contractor.</p></div></li>
-      <li><span class="when">Eleven years</span>
+      <li><span class="stop" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#bank"/></svg></span><span class="when">Eleven years</span>
         <div><h3>J.P. Morgan Asset Management</h3><p>Anti-money-laundering and know-your-customer compliance, finishing as a vice president leading risk assessment. Certified Anti-Money Laundering Specialist. Chaired the firm's veterans group for two years and kept its cemetery cleanups going through COVID.</p></div></li>
-      <li><span class="when">2025</span>
+      <li><span class="stop" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#vhg"/></svg></span><span class="when">2025</span>
         <div><h3>Founded Veteran Home Guardians</h3><p>An Ohio 501(c)(3) nonprofit built on paid veteran-to-veteran visits in long-term care. It also publishes free resource guides.</p></div></li>
-      <li><span class="when">2026</span>
+      <li><span class="stop" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#mif"/></svg></span><span class="when">2026</span>
         <div><h3>Finance Officer, Mobility Independence Foundation</h3><p>Elected by the board in July.</p></div></li>
     </ol>
     <figure class="scene">
@@ -632,10 +648,10 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
     <h2>Get involved</h2>
     <p class="lede">Want to help? Sponsoring a guide or giving keeps every guide free. And the guides get better the same way a town does: people who know something speak up.</p>
     <ul class="ways">
-      <li id="support"><strong>Sponsor or donate.</strong> Support goes to Veteran Home Guardians, a 501(c)(3) nonprofit. <a href="https://www.vethomeguard.org/sponsor.html">Sponsor a guide</a> or <a href="https://www.vethomeguard.org/donate.html">make a donation</a>. Giving Tuesday is December 1: <a href="https://www.zeffy.com/en-US/donation-form/giving-tuesday-no-veteran-left-isolated">give to VHG's Giving Tuesday campaign</a>.</li>
-      <li><strong>Send a correction.</strong> A wrong phone number, a new game night, a program that closed. Every guide has a way to report it.</li>
-      <li><strong>Share a guide.</strong> <a href="/share/">Copy a ready reply</a> for someone who asked for help, print a <a href="https://guide.vethomeguard.org/flyers.html">ready-made flyer</a>, or hand it to the one person you know who needs it.</li>
-      <li><strong>List your organization.</strong> Listings are free. If you serve the people a guide is for, you belong in it.</li>
+      <li id="support"><span class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#give"/></svg></span><strong>Sponsor or donate.</strong> Support goes to Veteran Home Guardians, a 501(c)(3) nonprofit. <a href="https://www.vethomeguard.org/sponsor.html">Sponsor a guide</a> or <a href="https://www.vethomeguard.org/donate.html">make a donation</a>. Giving Tuesday is December 1: <a href="https://www.zeffy.com/en-US/donation-form/giving-tuesday-no-veteran-left-isolated">give to VHG's Giving Tuesday campaign</a>.</li>
+      <li><span class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#pencil"/></svg></span><strong>Send a correction.</strong> A wrong phone number, a new game night, a program that closed. Every guide has a way to report it.</li>
+      <li><span class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#share"/></svg></span><strong>Share a guide.</strong> <a href="/share/">Copy a ready reply</a> for someone who asked for help, print a <a href="https://guide.vethomeguard.org/flyers.html">ready-made flyer</a>, or hand it to the one person you know who needs it.</li>
+      <li><span class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#list-plus"/></svg></span><strong>List your organization.</strong> Listings are free. If you serve the people a guide is for, you belong in it.</li>
     </ul>
     <p class="actions">
       <a class="btn solid" href="https://www.vethomeguard.org/contact.html">Get in touch</a>

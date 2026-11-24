@@ -29,6 +29,7 @@ To add one, make a folder with the short name and copy any existing `index.html`
 - `index.html`: the page.
 - `share/index.html`: "Help someone find help": every guide with a ready reply to paste, a QR code, website code for partners and a one-page sheet to print. Built by `python3 tools/build_share.py .` (needs `pip install segno`); edit the list in that script, then re-run.
 - `photos/`: the portrait in the opening and the photo beside the background list, each in two sizes. They are saved without the camera's location data; keep it that way when adding more.
+- `icons.svg`: the line symbols on the home page and the share page, drawn for this site on a 24-pixel grid: one per guide (the same one wherever that guide appears), plus the symbols beside What I provide, the Background timeline and Get involved. Each sits beside words that already say the same thing, so it is hidden from screen readers. Use one with `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#vhg"/></svg>`.
 - `og.png`: the picture shown when the link is shared on Facebook, LinkedIn, X or in a text message.
 - `qr.png`, `qr.svg`: QR code for travisvought.com. Use the SVG for large prints and billboards.
 - `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`: browser and phone icons.
