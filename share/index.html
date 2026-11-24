@@ -44,7 +44,14 @@ h1{font-size:clamp(2rem,6vw,3rem);margin:1.5rem 0 .5rem;letter-spacing:-.02em}
 h2{font-size:1.45rem;margin:3rem 0 .5rem;padding-top:1.25rem;border-top:1px solid var(--rule)}
 h3{font-size:1.25rem;margin:0 0 .35rem}
 .lede{font-size:1.2rem;max-width:40rem}
-.steps{padding-left:1.25rem}
+.steps{list-style:none;counter-reset:step;padding:0;margin:1.5rem 0 1rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
+.steps li{counter-increment:step;position:relative;background:var(--sheet);border:1px solid var(--rule);padding:.9rem 1rem 1rem;font-size:1.02rem;line-height:1.5}
+.steps li::before{content:counter(step);display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--spruce);color:var(--paper);font-family:var(--display);font-weight:700;vertical-align:middle;margin-right:.6rem}
+.steps li+li::after{content:"";position:absolute;left:-1.45rem;top:1.55rem;width:.75rem;height:.75rem;border-top:2px solid var(--slate);border-right:2px solid var(--slate);transform:rotate(45deg)}
+.steps .ic{width:1.75rem;height:1.75rem;vertical-align:middle}
+.steps span{display:block;margin-top:.55rem}
+.ic{flex:none;width:1.5rem;height:1.5rem}
+h2,.guide h3{display:flex;align-items:center;gap:.6rem}
 .guides{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:1rem}
 .guide{display:grid;grid-template-columns:7rem minmax(0,1fr);gap:1.25rem;background:var(--sheet);border:1px solid var(--rule);padding:1.1rem}
 .qr svg{display:block;width:100%;height:auto;background:#fff}
@@ -60,6 +67,8 @@ pre{white-space:pre-wrap;word-break:break-word;font-size:.85rem;background:var(-
 .sheet{display:none}
 footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--slate);font-size:.95rem}
 @media (max-width:34rem){.guide{grid-template-columns:1fr}.guide .qr{width:7rem}}
+@media (max-width:44rem){.steps{grid-template-columns:1fr;gap:1.6rem}.steps li+li::after{left:1.6rem;top:-1.15rem;transform:rotate(135deg)}}
+@media (forced-colors:active){.steps li::before{border:1px solid CanvasText}}
 @media print{
   @page{margin:.45in}
   body{background:#fff;color:#000;font-size:11pt}
@@ -84,19 +93,19 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
 <main id="main">
 <h1>Help someone find help</h1>
 <p class="lede">When someone asks where to turn, you can point them to a free guide in a few seconds. Pick the guide, copy the reply, paste it. Every guide is free, needs no sign-up, and is built from public sources.</p>
-<ol class="steps">
-  <li>Find the guide that fits the person below.</li>
-  <li>Copy the reply and paste it where they asked, or show them the QR code.</li>
-  <li>If you know their state or town, add it. A reply that answers their exact question helps most.</li>
+<ol class="steps" role="list">
+  <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#search"/></svg><span>Find the guide that fits the person below.</span></li>
+  <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#copy"/></svg><span>Copy the reply and paste it where they asked, or show them the QR code.</span></li>
+  <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#map"/></svg><span>If you know their state or town, add it. A reply that answers their exact question helps most.</span></li>
 </ol>
 <p class="status" id="status" role="status" aria-live="polite"></p>
 
-<h2>The guides</h2>
+<h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#directory"/></svg>The guides</h2>
 <ul class="guides">
       <li class="guide" id="veteran-resident-resource-guide">
         <div class="qr"><svg aria-hidden="true" focusable="false" viewBox="0 0 33 33" shape-rendering="crispEdges" class="segno"><path fill="#fff" d="M0 0h33v33h-33z"/><path class="qrline" stroke="#143229" d="M2 2.5h7m2 0h1m1 0h3m1 0h1m2 0h1m3 0h7m-29 1h1m5 0h1m1 0h1m3 0h1m2 0h1m2 0h3m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m3 0h2m1 0h2m5 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h3m3 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h4m3 0h2m1 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m4 0h2m3 0h1m3 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m1 0h3m1 0h3m2 0h1m-19 1h1m1 0h4m1 0h1m1 0h1m1 0h2m2 0h2m1 0h1m1 0h2m1 0h2m1 0h1m-26 1h1m4 0h1m3 0h1m1 0h1m1 0h2m2 0h3m1 0h2m2 0h1m-26 1h2m1 0h3m1 0h1m1 0h1m1 0h5m2 0h3m3 0h1m-27 1h1m2 0h1m3 0h1m2 0h1m5 0h3m1 0h1m3 0h2m2 0h1m-29 1h2m2 0h1m1 0h2m1 0h1m2 0h2m5 0h1m1 0h2m2 0h1m1 0h1m-28 1h2m3 0h1m2 0h5m1 0h2m2 0h1m3 0h1m1 0h1m1 0h1m1 0h1m-28 1h1m1 0h1m1 0h2m2 0h1m1 0h2m1 0h1m2 0h4m1 0h2m1 0h1m2 0h1m-29 1h2m6 0h6m1 0h2m1 0h2m1 0h2m1 0h3m1 0h1m-27 1h1m2 0h2m1 0h3m4 0h1m4 0h1m2 0h1m1 0h1m-26 1h1m1 0h4m1 0h2m1 0h2m1 0h2m1 0h5m3 0h3m-27 1h2m1 0h1m2 0h1m1 0h1m1 0h1m4 0h3m1 0h2m3 0h1m3 0h1m-29 1h2m3 0h1m1 0h3m1 0h1m2 0h1m5 0h5m1 0h3m-29 1h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h12m-19 1h1m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m3 0h4m-28 1h7m2 0h2m1 0h2m1 0h1m3 0h2m1 0h1m1 0h1m1 0h1m-27 1h1m5 0h1m1 0h3m4 0h1m1 0h1m1 0h2m3 0h2m1 0h2m-29 1h1m1 0h3m1 0h1m1 0h2m2 0h2m1 0h2m1 0h7m3 0h1m-29 1h1m1 0h3m1 0h1m1 0h3m3 0h1m2 0h2m4 0h1m3 0h1m-28 1h1m1 0h3m1 0h1m8 0h1m1 0h1m2 0h2m1 0h2m2 0h2m-29 1h1m5 0h1m1 0h2m3 0h1m1 0h1m2 0h2m2 0h1m1 0h3m1 0h1m-29 1h7m2 0h1m1 0h2m1 0h1m1 0h1m2 0h2m2 0h2"/></svg></div>
         <div class="body">
-          <h3><a href="https://guide.vethomeguard.org/">Veteran Resident Resource Guide</a></h3>
+          <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#guide"/></svg><a href="https://guide.vethomeguard.org/">Veteran Resident Resource Guide</a></h3>
           <p class="who"><b>For:</b> Veterans, especially older and disabled veterans, their families, and nursing home and VA staff.</p>
           <label class="lbl" for="reply-veteran-resident-resource-guide">A reply you can paste</label>
           <textarea id="reply-veteran-resident-resource-guide" rows="4" readonly>There&#x27;s a free guide for this: veteran benefits, care, housing and the local VA and county veteran offices, state by state. No sign-up. https://guide.vethomeguard.org/</textarea>
@@ -107,7 +116,7 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
       <li class="guide" id="mobility-talk">
         <div class="qr"><svg aria-hidden="true" focusable="false" viewBox="0 0 29 29" shape-rendering="crispEdges" class="segno"><path fill="#fff" d="M0 0h29v29h-29z"/><path class="qrline" stroke="#143229" d="M2 2.5h7m1 0h4m1 0h2m3 0h7m-25 1h1m5 0h1m3 0h3m5 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h1m2 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m6 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m2 0h2m3 0h1m3 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-16 1h1m1 0h2m-13 1h1m1 0h1m3 0h2m2 0h3m6 0h1m2 0h1m1 0h1m-25 1h2m1 0h2m3 0h3m1 0h2m1 0h2m1 0h2m1 0h1m1 0h2m-24 1h2m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m3 0h3m1 0h1m-25 1h2m2 0h1m2 0h1m1 0h2m3 0h1m1 0h6m-20 1h1m1 0h3m2 0h1m1 0h2m1 0h2m2 0h2m4 0h1m-20 1h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h2m3 0h2m-25 1h3m2 0h2m1 0h1m1 0h3m2 0h1m1 0h2m2 0h2m1 0h1m-16 1h1m8 0h4m-22 1h2m2 0h5m2 0h2m3 0h5m2 0h1m-16 1h1m1 0h1m2 0h1m2 0h1m3 0h1m3 0h1m-25 1h7m1 0h1m2 0h1m4 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m4 0h2m1 0h3m3 0h1m2 0h1m-24 1h1m1 0h3m1 0h1m2 0h2m1 0h1m2 0h6m2 0h1m-24 1h1m1 0h3m1 0h1m2 0h1m1 0h1m2 0h1m2 0h1m2 0h1m1 0h2m-24 1h1m1 0h3m1 0h1m1 0h4m2 0h1m2 0h1m1 0h3m1 0h2m-25 1h1m5 0h1m3 0h3m3 0h1m1 0h3m-21 1h7m1 0h5m3 0h1m1 0h1m2 0h1m2 0h1"/></svg></div>
         <div class="body">
-          <h3><a href="https://mobilitytalk.org/">Mobility Talk</a></h3>
+          <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#mobility"/></svg><a href="https://mobilitytalk.org/">Mobility Talk</a></h3>
           <p class="who"><b>For:</b> People with disabilities and the people who help them, in every U.S. state and a growing list of countries.</p>
           <label class="lbl" for="reply-mobility-talk">A reply you can paste</label>
           <textarea id="reply-mobility-talk" rows="4" readonly>Mobility Talk is a free guide to disability help in every state: benefits, equipment and repairs, home access, rides, in-home help, work and your rights. Pick your state and it shows who to call. https://mobilitytalk.org/</textarea>
@@ -118,7 +127,7 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
       <li class="guide" id="yoga-mom-talk">
         <div class="qr"><svg aria-hidden="true" focusable="false" viewBox="0 0 33 33" shape-rendering="crispEdges" class="segno"><path fill="#fff" d="M0 0h33v33h-33z"/><path class="qrline" stroke="#143229" d="M2 2.5h7m2 0h8m1 0h2m2 0h7m-29 1h1m5 0h1m1 0h2m1 0h1m6 0h1m3 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m2 0h1m2 0h2m1 0h3m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m3 0h7m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h3m2 0h2m2 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m4 0h2m3 0h5m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-20 1h2m2 0h3m1 0h3m-19 1h3m1 0h2m3 0h1m1 0h3m1 0h1m2 0h1m6 0h2m-28 1h1m4 0h1m2 0h1m1 0h1m3 0h13m1 0h1m-29 1h1m1 0h1m2 0h3m1 0h3m1 0h1m1 0h1m2 0h1m3 0h2m1 0h1m1 0h1m-26 1h1m2 0h1m1 0h1m1 0h5m1 0h1m4 0h1m2 0h2m3 0h1m-29 1h2m2 0h1m1 0h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1m2 0h3m-28 1h3m4 0h2m2 0h2m1 0h1m1 0h3m2 0h2m1 0h2m1 0h1m-27 1h1m2 0h3m1 0h1m2 0h2m1 0h2m2 0h2m2 0h3m1 0h2m-26 1h3m3 0h4m2 0h1m2 0h3m1 0h1m1 0h2m-26 1h3m1 0h6m1 0h1m1 0h2m2 0h1m2 0h1m2 0h3m1 0h2m-25 1h1m5 0h1m6 0h1m2 0h1m2 0h1m2 0h1m-27 1h1m2 0h1m2 0h3m1 0h2m1 0h2m3 0h1m1 0h1m1 0h4m-23 1h2m5 0h3m1 0h10m1 0h2m-26 1h1m1 0h1m1 0h5m1 0h1m1 0h1m1 0h10m1 0h2m-20 1h1m1 0h2m1 0h1m2 0h5m3 0h2m1 0h2m-29 1h7m2 0h5m2 0h1m1 0h3m1 0h1m1 0h1m1 0h2m-28 1h1m5 0h1m1 0h2m1 0h1m2 0h2m1 0h1m2 0h1m3 0h1m2 0h2m-29 1h1m1 0h3m1 0h1m5 0h2m1 0h2m3 0h8m-28 1h1m1 0h3m1 0h1m1 0h2m1 0h3m5 0h1m4 0h4m-28 1h1m1 0h3m1 0h1m1 0h2m2 0h1m4 0h2m1 0h1m2 0h1m1 0h1m2 0h1m-29 1h1m5 0h1m1 0h1m1 0h1m2 0h1m1 0h1m4 0h1m1 0h1m1 0h2m1 0h1m-28 1h7m7 0h1m3 0h3m1 0h2m3 0h1"/></svg></div>
         <div class="body">
-          <h3><a href="https://www.yogamomtalk.com/">Yoga Mom Talk</a></h3>
+          <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#moms"/></svg><a href="https://www.yogamomtalk.com/">Yoga Mom Talk</a></h3>
           <p class="who"><b>For:</b> Moms and families: food, child care, health coverage, disability help and crisis lines.</p>
           <label class="lbl" for="reply-yoga-mom-talk">A reply you can paste</label>
           <textarea id="reply-yoga-mom-talk" rows="4" readonly>Yoga Mom Talk has free help for moms in every state: food, child care, health coverage, disability help and crisis lines, plus a kind word for the day. https://www.yogamomtalk.com/</textarea>
@@ -129,7 +138,7 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
       <li class="guide" id="nina-s-map">
         <div class="qr"><svg aria-hidden="true" focusable="false" viewBox="0 0 29 29" shape-rendering="crispEdges" class="segno"><path fill="#fff" d="M0 0h29v29h-29z"/><path class="qrline" stroke="#143229" d="M2 2.5h7m1 0h4m2 0h1m1 0h1m1 0h7m-25 1h1m5 0h1m5 0h3m3 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h4m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m3 0h2m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m6 0h2m3 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m1 0h6m2 0h1m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-16 1h1m4 0h1m-15 1h1m1 0h1m3 0h2m2 0h1m1 0h1m2 0h2m2 0h1m2 0h1m1 0h1m-24 1h1m2 0h1m3 0h3m2 0h1m1 0h2m1 0h2m1 0h1m1 0h2m-23 1h1m3 0h2m1 0h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h2m1 0h1m-25 1h2m1 0h1m1 0h1m4 0h1m1 0h1m1 0h1m1 0h2m1 0h3m-22 1h1m1 0h1m2 0h2m1 0h5m3 0h1m1 0h2m4 0h1m-24 1h2m1 0h2m1 0h4m1 0h2m1 0h2m1 0h2m3 0h2m-25 1h4m1 0h2m5 0h2m1 0h1m5 0h2m1 0h1m-17 1h5m1 0h1m1 0h1m1 0h4m-22 1h7m2 0h1m4 0h1m1 0h5m2 0h1m-16 1h2m3 0h1m2 0h1m3 0h1m3 0h1m-25 1h7m1 0h4m4 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m2 0h1m4 0h1m1 0h1m3 0h1m3 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m1 0h10m3 0h1m-25 1h1m1 0h3m1 0h1m2 0h2m1 0h1m2 0h3m2 0h1m1 0h2m-24 1h1m1 0h3m1 0h1m1 0h1m3 0h6m1 0h3m1 0h2m-25 1h1m5 0h1m2 0h1m1 0h2m2 0h2m2 0h2m-21 1h7m1 0h1m1 0h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1"/></svg></div>
         <div class="body">
-          <h3><a href="https://ninas-map.com/">Nina&#x27;s Map</a></h3>
+          <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#ninas-map"/></svg><a href="https://ninas-map.com/">Nina&#x27;s Map</a></h3>
           <p class="who"><b>For:</b> First Peoples: Native American, Alaska Native and Indigenous people, and anyone helping them.</p>
           <label class="lbl" for="reply-nina-s-map">A reply you can paste</label>
           <textarea id="reply-nina-s-map" rows="4" readonly>Nina&#x27;s Map is a free map for First Peoples: Nations, Native clinics, community centers, tribal colleges and tribal lands. It can show only the places that don&#x27;t ask for a tribal card. https://ninas-map.com/</textarea>
@@ -140,7 +149,7 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
       <li class="guide" id="find-bingo">
         <div class="qr"><svg aria-hidden="true" focusable="false" viewBox="0 0 29 29" shape-rendering="crispEdges" class="segno"><path fill="#fff" d="M0 0h29v29h-29z"/><path class="qrline" stroke="#143229" d="M2 2.5h7m1 0h1m3 0h2m2 0h1m1 0h7m-25 1h1m5 0h1m1 0h1m5 0h1m3 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m1 0h6m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m1 0h6m2 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m3 0h1m2 0h4m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m3 0h3m1 0h1m1 0h1m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-17 1h4m2 0h1m1 0h1m-17 1h1m1 0h2m1 0h3m1 0h2m3 0h1m1 0h1m1 0h1m2 0h1m1 0h2m-25 1h2m1 0h1m5 0h1m1 0h2m3 0h2m1 0h1m3 0h1m-21 1h1m2 0h3m1 0h2m1 0h1m5 0h1m-20 1h1m4 0h1m1 0h1m1 0h1m3 0h3m1 0h2m2 0h2m-23 1h4m2 0h1m1 0h1m1 0h1m1 0h3m2 0h4m1 0h3m-16 1h3m1 0h4m1 0h3m3 0h1m-24 1h1m1 0h2m1 0h1m2 0h2m1 0h1m1 0h1m2 0h1m2 0h1m1 0h2m-24 1h1m1 0h1m2 0h1m2 0h2m1 0h1m2 0h2m1 0h1m1 0h2m3 0h1m-22 1h1m2 0h3m1 0h1m2 0h12m-17 1h1m2 0h1m4 0h1m3 0h1m1 0h1m1 0h1m-25 1h7m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m1 0h1m1 0h3m-25 1h1m5 0h1m1 0h3m1 0h1m1 0h3m3 0h1m2 0h2m-25 1h1m1 0h3m1 0h1m2 0h1m4 0h1m1 0h6m2 0h1m-25 1h1m1 0h3m1 0h1m1 0h4m1 0h1m1 0h2m1 0h1m1 0h5m-25 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h2m-24 1h1m5 0h1m2 0h1m1 0h1m1 0h2m2 0h2m1 0h1m1 0h1m-23 1h7m1 0h1m1 0h1m2 0h2m4 0h6"/></svg></div>
         <div class="body">
-          <h3><a href="https://www.findbingo.org/">Find Bingo</a></h3>
+          <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#find-bingo"/></svg><a href="https://www.findbingo.org/">Find Bingo</a></h3>
           <p class="who"><b>For:</b> Bingo players, older adults looking for a night out, and the halls and clubs that run games.</p>
           <label class="lbl" for="reply-find-bingo">A reply you can paste</label>
           <textarea id="reply-find-bingo" rows="4" readonly>Find Bingo lists bingo games near you, state by state. Type a ZIP code and it shows halls, days and times. https://www.findbingo.org/</textarea>
@@ -151,7 +160,7 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
       <li class="guide" id="the-reefer">
         <div class="qr"><svg aria-hidden="true" focusable="false" viewBox="0 0 29 29" shape-rendering="crispEdges" class="segno"><path fill="#fff" d="M0 0h29v29h-29z"/><path class="qrline" stroke="#143229" d="M2 2.5h7m1 0h1m2 0h1m1 0h1m4 0h7m-25 1h1m5 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m2 0h3m1 0h1m2 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m6 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m6 0h2m1 0h1m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-16 1h1m1 0h6m-17 1h1m2 0h10m1 0h4m2 0h1m1 0h3m-24 1h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h2m3 0h5m-24 1h1m3 0h1m1 0h4m1 0h1m1 0h5m2 0h2m2 0h1m-22 1h1m1 0h1m3 0h1m2 0h1m1 0h1m2 0h3m1 0h4m-25 1h2m1 0h2m1 0h1m3 0h1m4 0h2m1 0h1m5 0h1m-25 1h2m3 0h1m1 0h1m1 0h2m1 0h1m1 0h3m3 0h1m2 0h1m-24 1h2m1 0h2m1 0h1m2 0h1m4 0h2m1 0h2m1 0h5m-25 1h1m2 0h1m3 0h1m4 0h1m4 0h3m1 0h2m1 0h1m-25 1h1m1 0h2m2 0h1m1 0h1m1 0h4m1 0h6m1 0h2m-16 1h2m1 0h1m1 0h1m2 0h1m3 0h1m1 0h2m-24 1h7m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m1 0h2m1 0h1m1 0h1m1 0h2m3 0h1m2 0h1m-24 1h1m1 0h3m1 0h1m1 0h1m2 0h2m2 0h6m2 0h2m-25 1h1m1 0h3m1 0h1m1 0h2m2 0h3m3 0h1m4 0h2m-25 1h1m1 0h3m1 0h1m2 0h5m1 0h1m1 0h1m2 0h5m-25 1h1m5 0h1m4 0h2m1 0h2m3 0h2m1 0h3m-25 1h7m1 0h1m2 0h4m1 0h1m1 0h1m2 0h1m2 0h1"/></svg></div>
         <div class="body">
-          <h3><a href="https://the-reefer.com/">The Reefer</a></h3>
+          <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#reefer"/></svg><a href="https://the-reefer.com/">The Reefer</a></h3>
           <p class="who"><b>For:</b> Adults with cannabis questions: what&#x27;s legal where they live, medical cards, and clearing an old record.</p>
           <label class="lbl" for="reply-the-reefer">A reply you can paste</label>
           <textarea id="reply-the-reefer" rows="4" readonly>The Reefer answers cannabis questions for every state in plain language: what&#x27;s legal, medical cards, where to buy, and how to clear an old record, each traced to a named source. https://the-reefer.com/</textarea>
@@ -162,7 +171,7 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
       <li class="guide" id="ohioweed">
         <div class="qr"><svg aria-hidden="true" focusable="false" viewBox="0 0 29 29" shape-rendering="crispEdges" class="segno"><path fill="#fff" d="M0 0h29v29h-29z"/><path class="qrline" stroke="#143229" d="M2 2.5h7m1 0h1m1 0h3m1 0h1m3 0h7m-25 1h1m5 0h1m2 0h2m2 0h2m3 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m4 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m2 0h4m2 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m4 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m1 0h2m1 0h1m1 0h1m4 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-16 1h4m3 0h1m-17 1h1m1 0h1m3 0h2m1 0h2m4 0h2m2 0h1m2 0h1m1 0h1m-20 1h1m1 0h2m1 0h1m1 0h1m2 0h2m1 0h2m1 0h1m1 0h2m-24 1h3m2 0h4m2 0h1m2 0h1m1 0h1m3 0h2m1 0h1m-25 1h3m2 0h1m2 0h1m1 0h3m1 0h1m1 0h1m2 0h3m-21 1h3m2 0h1m7 0h3m1 0h2m4 0h1m-23 1h1m1 0h1m4 0h1m3 0h1m1 0h2m1 0h2m3 0h2m-25 1h4m1 0h3m3 0h1m3 0h1m1 0h1m3 0h2m1 0h1m-21 1h2m1 0h4m3 0h1m1 0h2m1 0h3m-22 1h3m1 0h1m1 0h1m1 0h1m2 0h10m2 0h1m-16 1h2m2 0h1m3 0h1m3 0h1m3 0h1m-25 1h7m1 0h2m2 0h3m1 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m3 0h3m2 0h2m3 0h1m2 0h1m-24 1h1m1 0h3m1 0h1m3 0h1m2 0h8m3 0h1m-25 1h1m1 0h3m1 0h1m3 0h1m2 0h1m1 0h3m2 0h1m1 0h2m-24 1h1m1 0h3m1 0h1m1 0h4m4 0h2m1 0h3m1 0h2m-25 1h1m5 0h1m2 0h2m2 0h1m1 0h6m-21 1h7m1 0h1m2 0h3m2 0h1m4 0h1m2 0h1"/></svg></div>
         <div class="body">
-          <h3><a href="https://ohioweed.org/">OhioWeed</a></h3>
+          <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#ohioweed"/></svg><a href="https://ohioweed.org/">OhioWeed</a></h3>
           <p class="who"><b>For:</b> Ohioans with cannabis questions, and Ohio cannabis businesses.</p>
           <label class="lbl" for="reply-ohioweed">A reply you can paste</label>
           <textarea id="reply-ohioweed" rows="4" readonly>OhioWeed is a free Ohio cannabis guide: licensed dispensaries, a source-linked business directory, events, and Ohio&#x27;s rules in plain language. https://ohioweed.org/</textarea>
@@ -172,7 +181,7 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
       </li>
 </ul>
 
-<h2>Answering in groups and forums</h2>
+<h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#chat"/></svg>Answering in groups and forums</h2>
 <ul class="tips">
   <li>Answer the question first, then share the link. People trust a reply that helps before it points somewhere.</li>
   <li>Check the group's rules. Many allow helpful links but not repeated posts of the same link.</li>
@@ -180,7 +189,7 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
   <li>If someone is in danger or crisis, point them to 911 or the 988 Suicide and Crisis Lifeline first.</li>
 </ul>
 
-<h2>Put the guides on your website</h2>
+<h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#website"/></svg>Put the guides on your website</h2>
 <p>Libraries, county offices, churches, senior centers, schools and nonprofits are welcome to list the guides. Copy this and paste it into your resources page.</p>
 <pre id="snippet">&lt;h2&gt;Free help guides&lt;/h2&gt;
 &lt;ul&gt;
@@ -195,12 +204,12 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
 &lt;p&gt;Free, no sign-up, built from public sources. More at &lt;a href=&quot;https://travisvought.com/share/&quot;&gt;travisvought.com/share&lt;/a&gt;.&lt;/p&gt;</pre>
 <p class="btns"><button type="button" data-copy="snippet">Copy the website code</button></p>
 
-<h2>Print a sheet for a bulletin board</h2>
+<h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#print"/></svg>Print a sheet for a bulletin board</h2>
 <p>One page with every guide and its QR code, for a library, waiting room, food pantry, senior center or VFW hall.</p>
 <p class="btns"><button type="button" id="print">Print the sheet</button></p>
 <p>Want flyers for one guide? The veteran guide has <a href="https://guide.vethomeguard.org/flyers.html">printable flyers</a>, and Mobility Talk has a <a href="https://mobilitytalk.org/handout.html">printable help list for each state</a>.</p>
 
-<h2>Something wrong or missing?</h2>
+<h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#pencil"/></svg>Something wrong or missing?</h2>
 <p>If a listing is out of date or a kind of help is missing, <a href="https://www.vethomeguard.org/contact.html">tell me</a> and I fix it.</p>
 </main>
 <footer><p>Travis Vought, Marengo, Ohio. <a href="/">All the guides</a> · <a href="/privacy/">Privacy</a></p></footer>

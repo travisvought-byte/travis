@@ -50,6 +50,17 @@ GUIDES = [
 ]
 
 
+# each guide's symbol in /icons.svg, the same one its card shows on the home page
+ICONS = {"Veteran Resident Resource Guide": "guide", "Mobility Talk": "mobility", "Yoga Mom Talk": "moms",
+         "Nina's Map": "ninas-map", "Find Bingo": "find-bingo", "The Reefer": "reefer", "OhioWeed": "ohioweed"}
+
+
+def icon(name):
+    """A line symbol from the shared sprite. Decoration only: the words beside it say the same thing."""
+    return (f'<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+            f'<use href="/icons.svg#{name}"/></svg>')
+
+
 def qr_svg(url):
     svg = segno.make(url, error="m").svg_inline(dark="#143229", light="#ffffff", border=2, scale=1)
     svg = re.sub(r'width="(\d+)" height="(\d+)"',
@@ -68,7 +79,7 @@ for name, url, short, who, reply in GUIDES:
     cards.append(f"""      <li class="guide" id="{s}">
         <div class="qr">{qr_svg(url)}</div>
         <div class="body">
-          <h3><a href="{e(url)}">{e(name)}</a></h3>
+          <h3>{icon(ICONS[name])}<a href="{e(url)}">{e(name)}</a></h3>
           <p class="who"><b>For:</b> {e(who)}</p>
           <label class="lbl" for="reply-{s}">A reply you can paste</label>
           <textarea id="reply-{s}" rows="4" readonly>{e(reply)}</textarea>
@@ -136,13 +147,20 @@ h1{{font-size:clamp(2rem,6vw,3rem);margin:1.5rem 0 .5rem;letter-spacing:-.02em}}
 h2{{font-size:1.45rem;margin:3rem 0 .5rem;padding-top:1.25rem;border-top:1px solid var(--rule)}}
 h3{{font-size:1.25rem;margin:0 0 .35rem}}
 .lede{{font-size:1.2rem;max-width:40rem}}
-.steps{{padding-left:1.25rem}}
+.steps{{list-style:none;counter-reset:step;padding:0;margin:1.5rem 0 1rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}}
+.steps li{{counter-increment:step;position:relative;background:var(--sheet);border:1px solid var(--rule);padding:.9rem 1rem 1rem;font-size:1.02rem;line-height:1.5}}
+.steps li::before{{content:counter(step);display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--spruce);color:var(--paper);font-family:var(--display);font-weight:700;vertical-align:middle;margin-right:.6rem}}
+.steps li+li::after{{content:"";position:absolute;left:-1.45rem;top:1.55rem;width:.75rem;height:.75rem;border-top:2px solid var(--slate);border-right:2px solid var(--slate);transform:rotate(45deg)}}
+.steps .ic{{width:1.75rem;height:1.75rem;vertical-align:middle}}
+.steps span{{display:block;margin-top:.55rem}}
+.ic{{flex:none;width:1.5rem;height:1.5rem}}
+h2,.guide h3{{display:flex;align-items:center;gap:.6rem}}
 .guides{{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:1rem}}
 .guide{{display:grid;grid-template-columns:7rem minmax(0,1fr);gap:1.25rem;background:var(--sheet);border:1px solid var(--rule);padding:1.1rem}}
 .qr svg{{display:block;width:100%;height:auto;background:#fff}}
 .who{{margin:0 0 .6rem;color:var(--slate);font-size:1rem}}
 .lbl{{display:block;font-family:var(--display);font-size:.9rem;font-weight:600;margin:0 0 .25rem}}
-textarea{{width:100%;font:inherit;font-size:1rem;line-height:1.45;padding:.6rem;border:1px solid var(--rule);background:var(--paper);color:var(--spruce);resize:vertical}}
+textarea{{width:100%;font:inherit;font-size:1rem;line-height:1.45;padding:.6rem;border:1px solid var(--slate);background:var(--paper);color:var(--spruce);resize:vertical}}
 .btns{{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0 0}}
 button{{font-family:var(--display);font-weight:650;font-size:1rem;min-height:2.75rem;padding:.45rem 1rem;background:var(--sheet);color:var(--spruce);border:2px solid var(--spruce);cursor:pointer}}
 button:hover,button:focus-visible{{background:var(--spruce);color:var(--paper)}}
@@ -152,6 +170,8 @@ pre{{white-space:pre-wrap;word-break:break-word;font-size:.85rem;background:var(
 .sheet{{display:none}}
 footer{{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--slate);font-size:.95rem}}
 @media (max-width:34rem){{.guide{{grid-template-columns:1fr}}.guide .qr{{width:7rem}}}}
+@media (max-width:44rem){{.steps{{grid-template-columns:1fr;gap:1.6rem}}.steps li+li::after{{left:1.6rem;top:-1.15rem;transform:rotate(135deg)}}}}
+@media (forced-colors:active){{.steps li::before{{border:1px solid CanvasText}}}}
 @media print{{
   @page{{margin:.45in}}
   body{{background:#fff;color:#000;font-size:11pt}}
@@ -166,28 +186,29 @@ footer{{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:
   .sheet .for{{display:block;font-size:9.5pt;line-height:1.3}}
   .sheet .foot{{margin-top:12pt;font-size:9.5pt}}
 }}
-</style>
+.skip{{position:absolute;left:-999px;top:0}}.skip:focus{{left:1rem;top:1rem;background:#fff;color:#14303f;padding:.5rem 1rem;z-index:5;outline:3px solid #a07014}}</style>
 {COUNTER}
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 <div class="wrap screen">
-<p class="top"><a href="/">Travis Vought</a></p>
-<main>
+<header><p class="top"><a href="/">Travis Vought</a></p></header>
+<main id="main">
 <h1>Help someone find help</h1>
 <p class="lede">When someone asks where to turn, you can point them to a free guide in a few seconds. Pick the guide, copy the reply, paste it. Every guide is free, needs no sign-up, and is built from public sources.</p>
-<ol class="steps">
-  <li>Find the guide that fits the person below.</li>
-  <li>Copy the reply and paste it where they asked, or show them the QR code.</li>
-  <li>If you know their state or town, add it. A reply that answers their exact question helps most.</li>
+<ol class="steps" role="list">
+  <li>{icon("search")}<span>Find the guide that fits the person below.</span></li>
+  <li>{icon("copy")}<span>Copy the reply and paste it where they asked, or show them the QR code.</span></li>
+  <li>{icon("map")}<span>If you know their state or town, add it. A reply that answers their exact question helps most.</span></li>
 </ol>
 <p class="status" id="status" role="status" aria-live="polite"></p>
 
-<h2>The guides</h2>
+<h2>{icon("directory")}The guides</h2>
 <ul class="guides">
 {chr(10).join(cards)}
 </ul>
 
-<h2>Answering in groups and forums</h2>
+<h2>{icon("chat")}Answering in groups and forums</h2>
 <ul class="tips">
   <li>Answer the question first, then share the link. People trust a reply that helps before it points somewhere.</li>
   <li>Check the group's rules. Many allow helpful links but not repeated posts of the same link.</li>
@@ -195,17 +216,17 @@ footer{{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:
   <li>If someone is in danger or crisis, point them to 911 or the 988 Suicide and Crisis Lifeline first.</li>
 </ul>
 
-<h2>Put the guides on your website</h2>
+<h2>{icon("website")}Put the guides on your website</h2>
 <p>Libraries, county offices, churches, senior centers, schools and nonprofits are welcome to list the guides. Copy this and paste it into your resources page.</p>
 <pre id="snippet">{html.escape(snippet)}</pre>
 <p class="btns"><button type="button" data-copy="snippet">Copy the website code</button></p>
 
-<h2>Print a sheet for a bulletin board</h2>
+<h2>{icon("print")}Print a sheet for a bulletin board</h2>
 <p>One page with every guide and its QR code, for a library, waiting room, food pantry, senior center or VFW hall.</p>
 <p class="btns"><button type="button" id="print">Print the sheet</button></p>
 <p>Want flyers for one guide? The veteran guide has <a href="https://guide.vethomeguard.org/flyers.html">printable flyers</a>, and Mobility Talk has a <a href="https://mobilitytalk.org/handout.html">printable help list for each state</a>.</p>
 
-<h2>Something wrong or missing?</h2>
+<h2>{icon("pencil")}Something wrong or missing?</h2>
 <p>If a listing is out of date or a kind of help is missing, <a href="https://www.vethomeguard.org/contact.html">tell me</a> and I fix it.</p>
 </main>
 <footer><p>Travis Vought, Marengo, Ohio. <a href="/">All the guides</a> · <a href="/privacy/">Privacy</a></p></footer>
