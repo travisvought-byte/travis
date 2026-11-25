@@ -36,6 +36,15 @@ h1{font-size:2.2rem;margin:1.5rem 0 .25rem}
 h2{font-size:1.3rem;margin:2rem 0 .4rem;padding-top:1rem;border-top:1px solid var(--rule)}
 .date{color:var(--slate);font-family:var(--display);font-size:.95rem;margin:0 0 1.5rem}
 footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--slate);font-size:.95rem}
+.glance{margin:1.5rem 0 0;padding:1rem 1.25rem 1.1rem;background:var(--sheet);border:1px solid var(--rule);border-radius:.5rem}
+.glance h2{margin:0 0 .6rem;padding:0;border:0}
+.glance .cols{display:grid;gap:.5rem 2rem}
+@media (min-width:34rem){.glance .cols{grid-template-columns:1fr 1fr}}
+.glance h3{display:flex;align-items:center;gap:.5rem;margin:.4rem 0 .3rem;font-family:var(--display);font-size:1.05rem}
+.glance h3 svg{flex:none;width:1.6rem;height:1.6rem;color:var(--brass-ink,#7a5a0a)}
+@media (prefers-color-scheme:dark){.glance h3 svg{color:var(--brass)}}
+.glance ul{margin:0;padding-left:1.2rem}
+.glance .note{margin:.7rem 0 0;color:var(--slate);font-size:.95rem}
 .skip{position:absolute;left:-999px;top:0}.skip:focus{left:1rem;top:1rem;background:#fff;color:#14303f;padding:.5rem 1rem;z-index:5;outline:3px solid #a07014}</style>
 </head>
 <body>
@@ -46,6 +55,16 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
 <h1>Privacy</h1>
 <p class="date">Updated November 19, 2026</p>
 <p>This page covers travisvought.com. Each of the guides it links to has its own privacy page.</p>
+<section class="glance" aria-labelledby="glance-h">
+<h2 id="glance-h">At a glance</h2>
+<div class="cols">
+<div><h3><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#yes"/></svg>Counted, without cookies</h3>
+<ul><li>The page you opened</li><li>The site that sent you</li><li>Your browser and screen size</li><li>A rough country</li></ul></div>
+<div><h3><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#no"/></svg>Not stored, collected or sold</h3>
+<ul><li>Your internet address</li><li>Cookies on this site</li><li>Anything you type: there are no accounts, sign-ups or forms</li><li>Personal information: never sold</li></ul></div>
+</div>
+<p class="note">Details for each are below.</p>
+</section>
 
 <h2>What we count</h2>
 <p>We count visits with <a href="https://www.goatcounter.com/">GoatCounter</a>. It uses no cookies and keeps no personal information. It records the page you opened, the site that sent you, your browser and screen size, and a rough country worked out from your internet address. The address itself is not stored.</p>
