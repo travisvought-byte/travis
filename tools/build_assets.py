@@ -63,6 +63,11 @@ SHORT = {
                   "The Alpha to Omega series and other books by Travis Vought on Amazon."),
 }
 
+# The symbol from icons.svg shown on each short link's page, beside the words that name where it goes.
+ICON = {"vhg": "vhg", "guide": "guide", "veterans": "guide", "mobility": "mobility", "disability": "mobility",
+        "moms": "moms", "bingo": "ohio-bingo", "weed": "ohioweed", "cannabis": "ohioweed", "mif": "mif",
+        "flyers": "print", "contact": "chat", "donate": "give", "sponsor": "give", "github": "data", "books": "book"}
+
 # One GoatCounter dashboard is shared by all the sites; every path here starts /travisvought.com
 # so the sites never mix. No query strings, no cookies.
 COUNTER = (
@@ -83,13 +88,28 @@ REDIRECT = """<!DOCTYPE html>
 <meta property="og:url" content="{dest}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="2; url={dest}">
+<style>
+body{{margin:0;background:#f2f5ee;color:#143229;font-family:"Source Serif 4",Georgia,serif;font-size:1.125rem;line-height:1.6}}
+main{{max-width:36rem;margin:0 auto;padding:3rem 1.5rem}}
+.mark{{display:block;width:4rem;height:4rem;margin:0 0 1rem;color:#7a5a0a}}
+h1{{font-family:"Archivo",Arial,sans-serif;font-size:1.6rem;line-height:1.25;margin:0 0 .5rem}}
+h1 a{{color:inherit;text-underline-offset:.18em}}
+p{{margin:0;color:#55665e}}
+:focus-visible{{outline:3px solid #c79a2b;outline-offset:3px}}
+@media (prefers-color-scheme:dark){{body{{background:#0f1f1a;color:#e4ece6}}.mark{{color:#d9b453}}p{{color:#a9b8b0}}}}
+</style>
 <script>(function(){{var done=false;function go(){{if(!done){{done=true;location.replace({dest_js})}}}}
 var i=new Image();i.onload=i.onerror=go;setTimeout(go,1200);
 i.src="https://vhg-guide.goatcounter.com/count?p="+encodeURIComponent("/travisvought.com/{slug}")+"&t="+encodeURIComponent("Short link: {slug}")+"&rnd="+Math.random().toString(36).slice(2)}})();</script>
 </head>
 <body>
-<p><a href="{dest}">Continue to {title}</a></p>
+<main>
+<svg class="mark" width="64" height="64" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#{icon}"/></svg>
+<h1><a href="{dest}">Continue to {title}</a></h1>
+<p>{desc}</p>
+</main>
 </body>
 </html>
 """
@@ -99,7 +119,7 @@ for slug, (dest, title, desc) in SHORT.items():
     d.mkdir(exist_ok=True)
     (d / "index.html").write_text(REDIRECT.format(
         title=html.escape(title), desc=html.escape(desc), dest=html.escape(dest, quote=True),
-        dest_js='"' + dest.replace('"', '') + '"', slug=slug))
+        dest_js='"' + dest.replace('"', '') + '"', slug=slug, icon=ICON[slug]))
 
 # ---------- sitemap and robots ----------
 # Change LASTMOD to the day index.html last changed in a way worth a search engine's second look.
@@ -138,19 +158,22 @@ li a:hover,li a:focus-visible{color:#7a5a0a}
 :focus-visible{outline:3px solid #c79a2b;outline-offset:3px}
 p{margin:0 0 1rem;color:#55665e}
 .home{font-family:"Archivo",Arial,sans-serif;font-weight:700;color:#143229}
-</style>
+li a{display:flex;align-items:center;gap:.7rem}
+li svg{flex:none;width:1.6rem;height:1.6rem;color:#7a5a0a}
+.skip{position:absolute;left:-999px;top:0}.skip:focus{left:1rem;top:1rem;background:#fff;color:#14303f;padding:.5rem 1rem;z-index:5;outline:3px solid #a07014}</style>
 </head>
 <body>
-<main>
+<a class="skip" href="#main">Skip to main content</a>
+<main id="main">
 <h1>Nothing at this address</h1>
 <div class="bar" aria-hidden="true"></div>
 <p>The link may be mistyped or out of date. These are the guides:</p>
 <ul>
-<li><a href="https://guide.vethomeguard.org/">Help for a veteran</a></li>
-<li><a href="https://mobilitytalk.org/">Disability help</a></li>
-<li><a href="https://www.yogamomtalk.com/">Help for moms</a></li>
-<li><a href="https://www.findbingo.org/">A bingo game</a></li>
-<li><a href="https://ohioweed.org/">Cannabis in Ohio</a></li>
+<li><a href="https://guide.vethomeguard.org/"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#guide"/></svg>Help for a veteran</a></li>
+<li><a href="https://mobilitytalk.org/"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#mobility"/></svg>Disability help</a></li>
+<li><a href="https://www.yogamomtalk.com/"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#moms"/></svg>Help for moms</a></li>
+<li><a href="https://www.findbingo.org/"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#find-bingo"/></svg>A bingo game</a></li>
+<li><a href="https://ohioweed.org/"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#ohioweed"/></svg>Cannabis in Ohio</a></li>
 </ul>
 <p><a class="home" href="/">Go to travisvought.com</a></p>
 </main>
@@ -159,7 +182,7 @@ p{margin:0 0 1rem;color:#55665e}
 """)
 
 # ---------- pages rendered to images ----------
-fontdir = (repo / "fonts").as_uri()
+fontdir = (repo / "fonts").resolve().as_uri()
 tmp = pathlib.Path(sys.argv[2])
 tmp.mkdir(parents=True, exist_ok=True)
 

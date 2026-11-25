@@ -22,7 +22,7 @@ Easy to say out loud, print on a flyer or put on a billboard. Each one forwards 
 | travisvought.com/github | github.com/travisvought-byte |
 | travisvought.com/books | Travis's books on Amazon |
 
-To add one, make a folder with the short name and copy any existing `index.html` into it, then change the address and title. Or add it to the list in `tools/build_assets.py` and run `python3 tools/build_assets.py . /tmp/render`, which also rebuilds the QR code, the 404 page and the robots and sitemap files.
+To add one, make a folder with the short name and copy any existing `index.html` into it, then change the address and title. Or add it to the list in `tools/build_assets.py` and run `python3 tools/build_assets.py . /tmp/render`, which also rebuilds the QR code, the 404 page and the robots and sitemap files. A newer version of segno can write a slightly different `qr.png` for the same address; if the address hasn't changed, keep the committed QR images (`git checkout qr.png qr.svg`).
 
 ## Files
 
@@ -30,7 +30,7 @@ To add one, make a folder with the short name and copy any existing `index.html`
 - `share/index.html`: "Help someone find help": every guide with a ready reply to paste, a QR code, website code for partners and a one-page sheet to print. Built by `python3 tools/build_share.py .` (needs `pip install segno`); edit the list in that script, then re-run.
 - `open-data/index.html`: "Open data": each guide's dataset with what it covers, its license (data CC BY 4.0, code MIT), credit line and download folder, plus the open projects the guides draw on. Hand-written; keep the credit lines matching each repository's LICENSE.
 - `photos/`: the portrait in the opening and the photo beside the background list, each in two sizes. They are saved without the camera's location data; keep it that way when adding more.
-- `icons.svg`: the line symbols on the home page and the share page, drawn for this site on a 24-pixel grid: one per guide (the same one wherever that guide appears), plus the symbols beside What I provide, the Background timeline and Get involved. Each sits beside words that already say the same thing, so it is hidden from screen readers. Use one with `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#vhg"/></svg>`.
+- `icons.svg`: the line symbols on the home page and the share page, drawn for this site on a 24-pixel grid: one per guide (the same one wherever that guide appears), plus the symbols beside What I provide, the Background timeline and Get involved. Each sits beside words that already say the same thing, so it is hidden from screen readers. Use one with `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#vhg"/></svg>`. The short-link pages show the symbol of the site they forward to, the 404 page shows one beside each guide, and the Privacy page uses `yes` and `no` beside its At a glance lists. The short-link and 404 pages are written by `tools/build_assets.py` (its `ICON` list picks each short link's symbol).
 - `og.png`: the picture shown when the link is shared on Facebook, LinkedIn, X or in a text message.
 - `qr.png`, `qr.svg`: QR code for travisvought.com. Use the SVG for large prints and billboards.
 - `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`: browser and phone icons.

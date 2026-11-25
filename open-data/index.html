@@ -39,7 +39,13 @@ h3{font-size:1.1rem;margin:1.5rem 0 .35rem}
 .lede{font-size:1.2rem}
 .sets{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:1rem}
 .sets li{background:var(--sheet);border:1px solid var(--rule);padding:1rem 1.1rem}
-.sets h3{margin-top:0}
+.sets h3{margin-top:0;display:flex;align-items:center;gap:.55rem}
+.sets h3 svg{flex:none;width:1.5rem;height:1.5rem}
+.reuse{list-style:none;counter-reset:s;padding:0;margin:1rem 0;display:grid;gap:.6rem}
+@media (min-width:36rem){.reuse{grid-template-columns:repeat(3,1fr)}}
+.reuse li{counter-increment:s;display:flex;align-items:flex-start;gap:.55rem;background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--brass);padding:.7rem .8rem;font-family:var(--display);font-size:.98rem;line-height:1.35}
+.reuse li::before{content:counter(s);flex:none;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--spruce);color:var(--paper);font-weight:700;text-align:center;line-height:1.6rem}
+.reuse svg{flex:none;width:1.5rem;height:1.5rem}
 .sets .site{color:var(--slate);font-family:var(--display);font-size:.95rem;margin:0 0 .5rem}
 dl{margin:0}
 dt{font-family:var(--display);font-weight:700;font-size:.95rem;margin-top:.6rem}
@@ -60,9 +66,14 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
 
 <h2><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4C5.5 4 6 8 4 9c2 1 1.5 5 4 5M16 4c2.5 0 2 4 4 5-2 1-1.5 5-4 5M10 20l4-12"/></svg>Data you can reuse</h2>
 <p>Each dataset below is free to copy, change and share, including for commercial use, as long as you give the credit line shown.</p>
+<ol class="reuse" role="list" aria-label="How reuse works">
+  <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#data"/></svg><span>Get the data from its folder on GitHub</span></li>
+  <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#pencil"/></svg><span>Copy, change and share it, commercial use included</span></li>
+  <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#copy"/></svg><span>Give the credit line shown</span></li>
+</ol>
 <ul class="sets">
   <li>
-    <h3>Mobility Talk</h3>
+    <h3><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#mobility"/></svg>Mobility Talk</h3>
     <p class="site">mobilitytalk.org</p>
     <dl>
       <dt>What it covers</dt>
@@ -76,7 +87,7 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
     </dl>
   </li>
   <li>
-    <h3>Veteran Resident Resource Guide and Find Bingo</h3>
+    <h3><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#guide"/></svg>Veteran Resident Resource Guide and Find Bingo</h3>
     <p class="site">guide.vethomeguard.org and findbingo.org</p>
     <dl>
       <dt>What it covers</dt>
@@ -90,7 +101,7 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:v
     </dl>
   </li>
   <li>
-    <h3>Ohio Cannabis Ecosystem Directory</h3>
+    <h3><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#ohioweed"/></svg>Ohio Cannabis Ecosystem Directory</h3>
     <p class="site">OhioWeed.org and the-reefer.com</p>
     <dl>
       <dt>What it covers</dt>
