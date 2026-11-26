@@ -521,6 +521,9 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
           <li><a class="site" href="https://the-reefer.com/pillage/">
             <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#pillage"/></svg></span><b>Pillage the Reefer</b><span class="url">the-reefer.com/pillage</span>
             <span class="what">A free pirate game on The Reefer for adults 21 and over: captain a ship across a cartoon Caribbean, trade cargo, fight pirates and hunt for a lost crop. Plays in your browser.</span></a></li>
+          <li id="silver-cup" data-ends="2026-12-05T08:00:00Z"><a class="site" href="https://the-reefer.com/pillage/contest.html">
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="/icons.svg#pillage"/></svg></span><b>The Silver Cup</b><span class="url">the-reefer.com/pillage/contest.html</span>
+            <span class="what">Pillage the Reefer’s prize contest for MJBizCon week, December 1 to 4, 2026: the three best captains win 10, 5 and 1 silver half dollars. Free to enter, adults 21 and over in the US.</span></a></li>
         </ul>
       </div>
 
@@ -715,6 +718,9 @@ footer .elsewhere{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-family:var(-
 <script>
 (function () {
   var root = document.documentElement;
+  // The Silver Cup's entry comes off the list once the contest closes.
+  var cup = document.getElementById('silver-cup');
+  if (cup && Date.now() >= Date.parse(cup.getAttribute('data-ends'))) cup.parentNode.removeChild(cup);
   if (root.classList.contains('arrive')) {
     var go = function () { root.classList.add('ready'); };
     document.fonts.load('800 1em Archivo').then(go, go);
