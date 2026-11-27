@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Made to order | Travis Vought</title>
+<meta name="description" content="Handmade, made-to-order gifts from Travis Vought's workshop in Marengo, Ohio: laser-engraved tumblers, slate coasters, wood signs and service plaques, and 3D-printed grip aids.">
+<link rel="canonical" href="https://travisvought.com/shop/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Travis Vought">
+<meta property="og:url" content="https://travisvought.com/shop/">
+<meta property="og:title" content="Made to order | Travis Vought">
+<meta property="og:description" content="Handmade, made-to-order gifts from Travis Vought's workshop in Marengo, Ohio: laser-engraved tumblers, slate coasters, wood signs and service plaques, and 3D-printed grip aids.">
+<meta property="og:image" content="https://travisvought.com/og.png">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#143229">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+@font-face{font-family:"Archivo";src:url(/fonts/archivo.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url(/fonts/source-serif-4.woff2) format("woff2");font-weight:200 900;font-display:swap}
+:root{--spruce:#143229;--paper:#f2f5ee;--sheet:#fff;--brass:#c79a2b;--brass-ink:#7a5a0a;--slate:#55665e;--rule:#cfd8cd;--focus:#7a5a0a;--tag:#f6efd9;--art:#e4ebe1;--display:"Archivo","Arial Narrow",Arial,sans-serif;--body:"Source Serif 4",Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--spruce:#e4ece6;--paper:#0f1f1a;--sheet:#162b24;--brass-ink:#d9b453;--slate:#a9b8b0;--rule:#2c4a3f;--focus:#c79a2b;--tag:#22392f;--art:#cfd9d1}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--spruce);font-family:var(--body);font-size:1.125rem;line-height:1.6}
+a{color:inherit;text-underline-offset:.18em}
+a:hover{text-decoration-color:var(--brass)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.wrap{max-width:66rem;margin:0 auto;padding:1rem 1.5rem 2rem}
+.top{display:flex;justify-content:space-between;align-items:center;gap:.5rem 1.5rem;flex-wrap:wrap;font-family:var(--display);font-weight:700}
+.top a{display:inline-flex;align-items:center;min-height:2.75rem;text-decoration:none}
+.top .back{font-weight:600;border-bottom:2px solid transparent}
+.top .back:hover{border-bottom-color:var(--brass)}
+h1,h2,h3{font-family:var(--display);line-height:1.15}
+h1{font-size:clamp(2.3rem,7vw,3.6rem);font-weight:800;letter-spacing:-.025em;margin:1.25rem 0 1rem}
+.bar{width:5rem;height:.45rem;background:var(--brass);margin:0 0 1.5rem}
+.lede{font-size:clamp(1.15rem,2vw,1.3rem);line-height:1.5;max-width:40rem;margin:0 0 .75rem}
+.how{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:.75rem;max-width:56rem}
+@media (min-width:40rem){.how{grid-template-columns:repeat(3,1fr)}}
+.how li{display:flex;align-items:center;gap:.7rem;background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--brass);padding:.75rem .9rem;font-family:var(--display);font-size:1rem;line-height:1.35}
+.how svg{flex:none;width:1.6rem;height:1.6rem}
+.how b{flex:none;display:grid;place-items:center;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--spruce);color:var(--paper);font-weight:700}
+section{margin-top:3rem;padding-top:1.25rem;border-top:1px solid var(--rule)}
+h2{display:flex;align-items:center;gap:.7rem;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-.015em;margin:0 0 .35rem}
+h2 .sym{flex:none;width:2.5rem;height:2.5rem;border-radius:.75rem;display:grid;place-items:center;background:#143229;color:#c79a2b}
+h2 .sym svg{width:1.4rem;height:1.4rem}
+@media (prefers-color-scheme:dark){h2 .sym{border:1px solid var(--rule)}}
+.sub{color:var(--slate);margin:0 0 1.5rem}
+.items{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:1.25rem}
+.item{display:flex;flex-direction:column;height:100%;background:var(--sheet);border:1px solid var(--rule)}
+.item .art{order:-1;display:block;width:100%;height:auto;aspect-ratio:3/2;background:var(--art);border-bottom:1px solid var(--rule)}
+.art .hole{fill:var(--art)}
+.item .body{display:flex;flex-direction:column;flex:1;padding:1rem 1.1rem 1.1rem}
+.item h3{font-size:1.35rem;font-weight:750;margin:0 0 .45rem}
+.tag{align-self:flex-start;margin:0 0 .6rem;padding:.1rem .6rem;border:1px solid var(--brass-ink);border-radius:999px;background:var(--tag);color:var(--brass-ink);font-family:var(--display);font-weight:650;font-size:.85rem;line-height:1.5}
+.desc{margin:0 0 .6rem;font-size:1.05rem;line-height:1.5}
+.note{margin:0 0 .6rem;padding-left:.7rem;border-left:3px solid var(--brass);color:var(--slate);font-size:.98rem;line-height:1.45}
+.buy{margin-top:auto;padding-top:.6rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem 1rem}
+.price{margin:0;font-family:var(--display);font-weight:800;font-size:1.6rem;line-height:1.1}
+.price .unit{font-weight:600;font-size:1rem;color:var(--slate)}
+.order,.btn{display:inline-flex;align-items:center;gap:.5rem;min-height:2.9rem;padding:.6rem 1.15rem;font-family:var(--display);font-weight:700;font-size:1rem;line-height:1.2;text-decoration:none;background:var(--spruce);color:var(--paper);border:2px solid var(--spruce)}
+.order svg,.btn svg{flex:none;width:1.2rem;height:1.2rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.order:hover,.btn:hover{background:var(--brass);border-color:var(--brass);color:#143229}
+.btn.line{background:transparent;color:var(--spruce)}
+.btn.line:hover{color:#143229}
+.other{display:grid;gap:1rem;max-width:44rem}
+.other p{margin:0}
+
+.addr{overflow-wrap:anywhere;max-width:100%}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--slate);font-size:.95rem}
+footer p{margin:0 0 .25rem}
+footer a{display:inline-flex;align-items:center;min-height:2.75rem}
+.skip{position:absolute;left:-999px;top:0}.skip:focus{left:1rem;top:1rem;background:#fff;color:#14303f;padding:.5rem 1rem;z-index:5;outline:3px solid #7a5a0a}
+@media (max-width:30rem){.wrap{padding:1rem 1rem 2rem}.items{grid-template-columns:1fr}}
+@media (forced-colors:active){h2 .sym,.how b{border:1px solid CanvasText}.order,.btn{border-color:ButtonText}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{body{background:#fff;color:#000}.skip,.order,.btn,.top .back{display:none!important}.item{break-inside:avoid}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="wrap">
+<header class="top"><a href="/">Travis Vought</a><a class="back" href="/#background">About the maker</a></header>
+<main id="main">
+<h1>Made to order</h1>
+<div class="bar" aria-hidden="true"></div>
+<p class="lede">Everything here is made to order in Marengo, Ohio. Ships in 7 to 10 business days. Prices include US shipping.</p>
+<p class="lede">Order by email. We’ll confirm the details and send you a secure payment link.</p>
+<ol class="how" role="list" aria-label="How ordering works">
+  <li><b aria-hidden="true">1</b><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#chat"/></svg><span>Email your order</span></li>
+  <li><b aria-hidden="true">2</b><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#yes"/></svg><span>We confirm and send a secure payment link</span></li>
+  <li><b aria-hidden="true">3</b><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v10l-8 4-8-4V7zM4 7l8 4 8-4M12 11v10M8 5l8 4"/></svg><span>We make it and ship it to you</span></li>
+</ol>
+
+<section aria-labelledby="engraved">
+<h2 id="engraved"><span class="sym"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v5l-2 2h-4L8 8zM12 10v6M12 19.5v1M8.5 17.5l-1 1M15.5 17.5l1 1M4 21h16"/></svg></span>Engraved</h2>
+<p class="sub">Laser engraved in our workshop.</p>
+<ul class="items" role="list">
+  <li><article class="item" aria-labelledby="tumbler-h">
+    <div class="body">
+      <h3 id="tumbler-h">Personalized tumbler</h3>
+      <p class="tag">Made to order</p>
+      <p class="desc">A 20 oz powder-coated steel tumbler, engraved with a name, a short line, or the American flag veteran design.</p>
+      <div class="buy">
+        <p class="price">$34</p>
+        <a class="order" href="mailto:veteranhomeguardians@gmail.com?subject=Order%3A%20Personalized%20tumbler&amp;body=Hello%2C%0D%0A%0D%0AI%27d%20like%20to%20order%3A%20Personalized%20tumbler%0D%0A%0D%0AQuantity%3A%0D%0AText%20or%20design%20to%20engrave%3A%0D%0AShipping%20address%3A%0D%0AAnything%20else%3A%0D%0A%0D%0AThank%20you"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 6h17v12h-17zM4 6.5l8 6.5 8-6.5"/></svg>Order<span class="vh"> the personalized tumbler by email</span></a>
+      </div>
+    </div>
+    <svg class="art" viewBox="0 0 240 160" role="img" aria-label="Drawing of a dark green steel tumbler with a lid, engraved with a small American flag" focusable="false"><ellipse cx="120" cy="149" rx="40" ry="4.5" fill="#143229" opacity=".14"/><path d="M84 41h72l-7 102a5 5 0 0 1-5 5H96a5 5 0 0 1-5-5z" fill="#1f4a3d"/><path d="M93 45h7l-4.5 98h-3.5z" fill="#fff" opacity=".13"/><rect x="82" y="34" width="76" height="9" rx="2" fill="#c3cdc6"/><path d="M86 34c0-8 6-12 12-12h44c6 0 12 4 12 12z" fill="#2a302d"/><rect x="126" y="24.5" width="16" height="4" rx="2" fill="#56605b"/><rect x="101" y="70" width="17" height="13" rx="1" fill="#d6dfd9"/><g fill="#1f4a3d"><circle cx="104.2" cy="73.2" r="1.05"/><circle cx="109.5" cy="73.2" r="1.05"/><circle cx="114.8" cy="73.2" r="1.05"/><circle cx="104.2" cy="76.5" r="1.05"/><circle cx="109.5" cy="76.5" r="1.05"/><circle cx="114.8" cy="76.5" r="1.05"/><circle cx="104.2" cy="79.8" r="1.05"/><circle cx="109.5" cy="79.8" r="1.05"/><circle cx="114.8" cy="79.8" r="1.05"/></g><path d="M122 71.1h17M122 75.5h17M122 79.9h17M101 84.3h38M101 88.7h38M101 93.1h38" stroke="#d6dfd9" stroke-width="2.3" stroke-linecap="round"/><path d="M108 106h24" stroke="#d6dfd9" stroke-width="1.4" stroke-linecap="round" opacity=".8"/></svg>
+  </article></li>
+  <li><article class="item" aria-labelledby="coasters-h">
+    <div class="body">
+      <h3 id="coasters-h">Slate coaster set</h3>
+      <p class="tag">Made to order</p>
+      <p class="desc">Four 4-inch slate coasters, engraved with a name, monogram or design.</p>
+      <div class="buy">
+        <p class="price">$32</p>
+        <a class="order" href="mailto:veteranhomeguardians@gmail.com?subject=Order%3A%20Slate%20coaster%20set&amp;body=Hello%2C%0D%0A%0D%0AI%27d%20like%20to%20order%3A%20Slate%20coaster%20set%0D%0A%0D%0AQuantity%3A%0D%0AText%20or%20design%20to%20engrave%3A%0D%0AShipping%20address%3A%0D%0AAnything%20else%3A%0D%0A%0D%0AThank%20you"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 6h17v12h-17zM4 6.5l8 6.5 8-6.5"/></svg>Order<span class="vh"> the slate coaster set by email</span></a>
+      </div>
+    </div>
+    <svg class="art" viewBox="0 0 240 160" role="img" aria-label="Drawing of a stack of four dark slate coasters, the top one engraved with a monogram letter M in a circle" focusable="false"><ellipse cx="120" cy="134" rx="54" ry="5" fill="#143229" opacity=".14"/><rect x="80" y="44" width="84" height="84" rx="4" fill="#2e353a" stroke="#262d32" stroke-width="1.2"/><rect x="81.5" y="38" width="84" height="84" rx="4" fill="#363e44" stroke="#262d32" stroke-width="1.2"/><rect x="77.5" y="32" width="84" height="84" rx="4" fill="#30373c" stroke="#262d32" stroke-width="1.2"/><rect x="78" y="26" width="84" height="84" rx="4" fill="#424b52" stroke="#262d32" stroke-width="1.2"/><path d="M84 40c14 4 30-3 44 1s22 2 30-2M86 96c18-3 34 4 52 0s14-2 18 0" stroke="#4d575e" stroke-width="1" fill="none"/><circle cx="120" cy="68" r="27" stroke="#d2d9dc" stroke-width="2" fill="none"/><circle cx="120" cy="68" r="22.5" stroke="#d2d9dc" stroke-width=".8" fill="none"/><text x="120" y="79" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="30" font-weight="700" fill="#d2d9dc">M</text></svg>
+  </article></li>
+  <li><article class="item" aria-labelledby="logo-coasters-h">
+    <div class="body">
+      <h3 id="logo-coasters-h">Custom-logo coasters</h3>
+      <p class="tag">Made to order</p>
+      <p class="desc">Your logo on slate coasters, for businesses, posts and halls. 12 minimum.</p>
+      <div class="buy">
+        <p class="price">From $6 <span class="unit">each</span></p>
+        <a class="order" href="mailto:veteranhomeguardians@gmail.com?subject=Order%3A%20Custom-logo%20coasters&amp;body=Hello%2C%0D%0A%0D%0AI%27d%20like%20a%20quote%20for%3A%20Custom-logo%20coasters%0D%0A%0D%0AQuantity%3A%0D%0ALogo%3A%20please%20attach%20it%20to%20this%20email%0D%0ADate%20you%20need%20them%20by%3A%0D%0AShipping%20address%3A%0D%0AAnything%20else%3A%0D%0A%0D%0AThank%20you"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 6h17v12h-17zM4 6.5l8 6.5 8-6.5"/></svg>Get a quote<span class="vh"> for custom-logo coasters by email</span></a>
+      </div>
+    </div>
+    <svg class="art" viewBox="0 0 240 160" role="img" aria-label="Drawing of three slate coasters fanned out, each engraved with a round your-logo-here mark" focusable="false"><ellipse cx="120" cy="130" rx="86" ry="5" fill="#143229" opacity=".14"/><g transform="translate(70 86) rotate(-10)"><rect x="-34" y="-34" width="68" height="68" rx="4" fill="#424b52" stroke="#262d32" stroke-width="1.2"/><circle r="21" stroke="#d2d9dc" stroke-width="1.8" fill="none"/><text y="-1.5" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="9" font-weight="700" fill="#d2d9dc">YOUR</text><text y="9" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="9" font-weight="700" fill="#d2d9dc">LOGO</text></g><g transform="translate(170 86) rotate(10)"><rect x="-34" y="-34" width="68" height="68" rx="4" fill="#424b52" stroke="#262d32" stroke-width="1.2"/><circle r="21" stroke="#d2d9dc" stroke-width="1.8" fill="none"/><text y="-1.5" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="9" font-weight="700" fill="#d2d9dc">YOUR</text><text y="9" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="9" font-weight="700" fill="#d2d9dc">LOGO</text></g><g transform="translate(120 80) rotate(0)"><rect x="-34" y="-34" width="68" height="68" rx="4" fill="#424b52" stroke="#262d32" stroke-width="1.2"/><circle r="21" stroke="#d2d9dc" stroke-width="1.8" fill="none"/><text y="-1.5" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="9" font-weight="700" fill="#d2d9dc">YOUR</text><text y="9" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="9" font-weight="700" fill="#d2d9dc">LOGO</text></g></svg>
+  </article></li>
+  <li><article class="item" aria-labelledby="honey-dippers-h">
+    <div class="body">
+      <h3 id="honey-dippers-h">Honey dipper gift set</h3>
+      <p class="tag">Made to order</p>
+      <p class="desc">Two engraved hardwood honey dippers and a wood gift tag.</p>
+      <div class="buy">
+        <p class="price">$16</p>
+        <a class="order" href="mailto:veteranhomeguardians@gmail.com?subject=Order%3A%20Honey%20dipper%20gift%20set&amp;body=Hello%2C%0D%0A%0D%0AI%27d%20like%20to%20order%3A%20Honey%20dipper%20gift%20set%0D%0A%0D%0AQuantity%3A%0D%0AText%20or%20design%20to%20engrave%3A%0D%0AShipping%20address%3A%0D%0AAnything%20else%3A%0D%0A%0D%0AThank%20you"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 6h17v12h-17zM4 6.5l8 6.5 8-6.5"/></svg>Order<span class="vh"> the honey dipper gift set by email</span></a>
+      </div>
+    </div>
+    <svg class="art" viewBox="0 0 240 160" role="img" aria-label="Drawing of two wooden honey dippers tied to a small wood gift tag engraved with a heart" focusable="false"><ellipse cx="118" cy="142" rx="84" ry="5" fill="#143229" opacity=".14"/><g transform="translate(26 100) rotate(-18)"><rect x="0" y="-3.5" width="104" height="7" rx="3.5" fill="#d6a668" stroke="#a8743c" stroke-width=".8"/><circle cx="1" cy="0" r="5.2" fill="#d6a668" stroke="#a8743c" stroke-width=".8"/><rect x="100" y="-12" width="43" height="24" rx="10" fill="#dcae6e" stroke="#a8743c" stroke-width=".8"/><path d="M105 -7.5v15.0M110.5 -10v20M116 -11v22M121.5 -11v22M127 -11v22M132.5 -10v20M138 -7.5v15.0" stroke="#a06a32" stroke-width="1.8" stroke-linecap="round"/><rect x="100" y="-12" width="43" height="9" rx="4.5" fill="#fff" opacity=".18"/></g><g transform="translate(40 126) rotate(-18)"><rect x="0" y="-3.5" width="104" height="7" rx="3.5" fill="#d6a668" stroke="#a8743c" stroke-width=".8"/><circle cx="1" cy="0" r="5.2" fill="#d6a668" stroke="#a8743c" stroke-width=".8"/><rect x="100" y="-12" width="43" height="24" rx="10" fill="#dcae6e" stroke="#a8743c" stroke-width=".8"/><path d="M105 -7.5v15.0M110.5 -10v20M116 -11v22M121.5 -11v22M127 -11v22M132.5 -10v20M138 -7.5v15.0" stroke="#a06a32" stroke-width="1.8" stroke-linecap="round"/><rect x="100" y="-12" width="43" height="9" rx="4.5" fill="#fff" opacity=".18"/></g><path d="M186 119C168 132 134 126 106 106" stroke="#7d5a2e" stroke-width="1.1" fill="none"/><path d="M184 104h34a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4h-34l-8-15z" fill="#ead3a5" stroke="#b88a4c" stroke-width="1"/><circle cx="185" cy="119" r="2.6" class="hole"/><path d="M206 125.5l-6.2-6.1a3.6 3.6 0 0 1 6.2-4.3 3.6 3.6 0 0 1 6.2 4.3z" fill="#6f441c"/></svg>
+  </article></li>
+  <li><article class="item" aria-labelledby="wood-sign-h">
+    <div class="body">
+      <h3 id="wood-sign-h">Live-edge wood sign</h3>
+      <p class="tag">Made to order</p>
+      <p class="desc">An 8 to 10 inch slice of wood from our own property, engraved with a family name, an “established” date or a saying.</p>
+      <div class="buy">
+        <p class="price">$59</p>
+        <a class="order" href="mailto:veteranhomeguardians@gmail.com?subject=Order%3A%20Live-edge%20wood%20sign&amp;body=Hello%2C%0D%0A%0D%0AI%27d%20like%20to%20order%3A%20Live-edge%20wood%20sign%0D%0A%0D%0AQuantity%3A%0D%0AText%20or%20design%20to%20engrave%3A%0D%0AShipping%20address%3A%0D%0AAnything%20else%3A%0D%0A%0D%0AThank%20you"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 6h17v12h-17zM4 6.5l8 6.5 8-6.5"/></svg>Order<span class="vh"> the live-edge wood sign by email</span></a>
+      </div>
+    </div>
+    <svg class="art" viewBox="0 0 240 160" role="img" aria-label="Drawing of a round slice of wood with bark on the edge, engraved The Millers, established 2026" focusable="false"><ellipse cx="120" cy="146" rx="64" ry="5" fill="#143229" opacity=".14"/><path d="M187.7 79 L185.4 84.4 L184 89.6 L183.8 95.1 L182.7 100.5 L179.5 105.2 L176 109.5 L173.1 114.1 L169.5 118.2 L164.8 121.3 L160.5 124.5 L157.3 129.2 L153.8 134.2 L148.9 137.5 L143.2 139.1 L137.5 140.6 L131.7 141.6 L125.8 141 L120 139.4 L114.4 139 L108.7 139.7 L102.9 139.1 L97.8 136.6 L92.9 133.8 L87.7 131.8 L82.6 129.4 L78.3 125.9 L73.8 122.6 L68.3 119.9 L63.2 116.5 L60.5 111.4 L59.6 105.6 L58.5 100.1 L57.2 94.9 L57 89.5 L57.2 84.2 L56.2 79 L54.5 73.6 L54.5 68.1 L56.8 63 L59.1 58.1 L60.4 52.8 L62.2 47.5 L65.4 42.9 L68.8 38.5 L71.9 33.6 L76 29.5 L81.9 27.6 L88.1 26.9 L93.4 25.1 L98.2 22.6 L103.5 20.8 L108.9 19.5 L114.3 17.5 L120 15.4 L125.9 15.5 L131.5 17.6 L136.9 19.3 L142.8 20 L148.5 21.4 L153.4 24.4 L158 27.8 L162.8 30.9 L166.7 34.9 L169 40.2 L170.9 45.4 L174.3 49.4 L178.7 53.2 L182 57.7 L184.2 62.8 L186.4 68 L188.2 73.4Z" fill="#5b3b24"/><path d="M179.9 79 L179.1 83.9 L178 88.6 L176.8 93.4 L175.4 98 L173.4 102.5 L170.7 106.6 L167.5 110.4 L164 113.8 L160.4 117.1 L157 120.5 L153.5 124.2 L149.8 127.7 L145.6 130.8 L140.8 133 L135.7 134.1 L130.4 134.4 L125.1 134.2 L120 133.8 L114.9 133.5 L109.9 133 L104.9 132.2 L100 130.8 L95.4 128.7 L91.1 126.3 L86.8 123.7 L82.5 121.2 L78.1 118.5 L73.9 115.5 L70.2 111.9 L67.4 107.7 L65.6 102.9 L64.6 98 L64.1 93.1 L63.6 88.4 L62.9 83.7 L62.2 79 L61.8 74.2 L62.1 69.4 L63.2 64.6 L64.8 60.1 L66.8 55.6 L68.8 51.1 L71.1 46.7 L73.8 42.4 L77.2 38.6 L81.3 35.5 L86 33.2 L91 31.6 L95.9 30.2 L100.6 28.7 L105.2 26.9 L109.9 25.1 L114.9 23.6 L120 22.8 L125.2 22.9 L130.3 23.7 L135.3 25 L140.3 26.4 L145.2 28.1 L149.9 30.2 L154.3 32.8 L158.1 36.1 L161.3 40 L164 44.2 L166.5 48.3 L169.2 52.2 L172.2 56 L175.2 60 L177.8 64.4 L179.5 69.1 L180.1 74Z" fill="#e0bd8c"/><g fill="none" stroke="#c99e68" stroke-width="1.1" opacity=".7"><ellipse cx="120" cy="79" rx="48.8" ry="46" /><ellipse cx="120" cy="79" rx="38.2" ry="36" /><ellipse cx="120" cy="79" rx="27.6" ry="26" /><ellipse cx="120" cy="79" rx="15.9" ry="15" /><ellipse cx="120" cy="79" rx="6.4" ry="6" /></g><text x="120" y="76" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="13" font-weight="800" letter-spacing=".6" fill="#47280f">THE MILLERS</text><path d="M92 84h56" stroke="#47280f" stroke-width="1.2"/><text x="120" y="98" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2" fill="#47280f">EST. 2026</text></svg>
+  </article></li>
+  <li><article class="item" aria-labelledby="service-plaque-h">
+    <div class="body">
+      <h3 id="service-plaque-h">Service plaque</h3>
+      <p class="tag">Made to order</p>
+      <p class="desc">An engraved wood plaque honoring a veteran’s service, with their name, branch and years.</p>
+      <p class="note">We don’t use official military emblems or seals.</p>
+      <div class="buy">
+        <p class="price">$69</p>
+        <a class="order" href="mailto:veteranhomeguardians@gmail.com?subject=Order%3A%20Service%20plaque&amp;body=Hello%2C%0D%0A%0D%0AI%27d%20like%20to%20order%3A%20Service%20plaque%0D%0A%0D%0AQuantity%3A%0D%0AName%2C%20branch%20and%20years%20to%20engrave%3A%0D%0AShipping%20address%3A%0D%0AAnything%20else%3A%0D%0A%0D%0AThank%20you"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 6h17v12h-17zM4 6.5l8 6.5 8-6.5"/></svg>Order<span class="vh"> the service plaque by email</span></a>
+      </div>
+    </div>
+    <svg class="art" viewBox="0 0 240 160" role="img" aria-label="Drawing of a wood plaque engraved with a star, In honor of, J. Miller, Veteran, 1998 to 2006" focusable="false"><ellipse cx="120" cy="148" rx="58" ry="5" fill="#143229" opacity=".14"/><rect x="64" y="20" width="112" height="122" rx="7" fill="#6e4220"/><rect x="70" y="26" width="100" height="110" rx="4" fill="#94602f"/><rect x="75" y="31" width="90" height="100" rx="2" fill="#c38d55"/><path d="M120 38.5 L122.1 44.2 L128.1 44.4 L123.3 48.1 L125 53.9 L120 50.5 L115 53.9 L116.7 48.1 L111.9 44.4 L117.9 44.2Z" fill="none" stroke="#3d220c" stroke-width="1.4" stroke-linejoin="round"/><text x="120" y="68" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="7.5" font-weight="600" letter-spacing="1.3" fill="#3d220c">IN HONOR OF</text><text x="120" y="85" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#3d220c">J. MILLER</text><path d="M98 92h44" stroke="#3d220c" stroke-width="1"/><text x="120" y="105" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="8" font-weight="700" letter-spacing="1.6" fill="#3d220c">VETERAN</text><text x="120" y="118" text-anchor="middle" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="8.5" font-weight="600" letter-spacing=".8" fill="#3d220c">1998 – 2006</text></svg>
+  </article></li>
+</ul>
+</section>
+
+<section aria-labelledby="printed">
+<h2 id="printed"><span class="sym"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V3h16v18M4 7h16M10.5 7v3l1.5 1.5L13.5 10V7M8 21v-2.5h8V21M8 16h8"/></svg></span>3D printed</h2>
+<p class="sub">Printed in our workshop on a 3D printer.</p>
+<ul class="items" role="list">
+  <li><article class="item" aria-labelledby="card-holder-h">
+    <div class="body">
+      <h3 id="card-holder-h">Playing card holder</h3>
+      <p class="tag">Made to order</p>
+      <p class="desc">Holds a hand of cards for people with arthritis or weak grip. Rounded, no small parts.</p>
+      <p class="note">Activity directors: ask about 10-packs.</p>
+      <div class="buy">
+        <p class="price">$12</p>
+        <a class="order" href="mailto:veteranhomeguardians@gmail.com?subject=Order%3A%20Playing%20card%20holder&amp;body=Hello%2C%0D%0A%0D%0AI%27d%20like%20to%20order%3A%20Playing%20card%20holder%0D%0A%0D%0AQuantity%3A%0D%0AText%20or%20design%20to%20print%2C%20if%20any%3A%0D%0AColor%2C%20if%20you%20have%20a%20preference%3A%0D%0AShipping%20address%3A%0D%0AAnything%20else%3A%0D%0A%0D%0AThank%20you"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 6h17v12h-17zM4 6.5l8 6.5 8-6.5"/></svg>Order<span class="vh"> the playing card holder by email</span></a>
+      </div>
+    </div>
+    <svg class="art" viewBox="0 0 240 160" role="img" aria-label="Drawing of a curved gold holder standing a fanned hand of five playing cards upright" focusable="false"><ellipse cx="120" cy="146" rx="74" ry="5" fill="#143229" opacity=".14"/><g transform="translate(120 124) rotate(-34)"><rect x="-18" y="-82" width="36" height="74" rx="3.5" fill="#fbfbf7" stroke="#8f9b95" stroke-width="1"/><text x="-13.5" y="-70" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#1d2321">A</text><path d="M0-5.6C-5.4-1-4.6 2.8-2.3 2.8-1.1 2.8-.3 2.2 0 1.2.3 2.2 1.1 2.8 2.3 2.8 4.6 2.8 5.4-1 0-5.6ZM0 1.2-1.7 5H1.7Z" transform="translate(-10.2 -60) scale(.62)" fill="#1d2321"/></g><g transform="translate(120 124) rotate(-17)"><rect x="-18" y="-82" width="36" height="74" rx="3.5" fill="#fbfbf7" stroke="#8f9b95" stroke-width="1"/><text x="-13.5" y="-70" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#b3261e">K</text><path d="M0 3.6C-5.4-.8-4.6-5.6-2.3-5.6-1-5.6 0-4.7 0-3.3 0-4.7 1-5.6 2.3-5.6 4.6-5.6 5.4-.8 0 3.6Z" transform="translate(-10.2 -60) scale(.62)" fill="#b3261e"/></g><g transform="translate(120 124) rotate(0)"><rect x="-18" y="-82" width="36" height="74" rx="3.5" fill="#fbfbf7" stroke="#8f9b95" stroke-width="1"/><text x="-13.5" y="-70" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#b3261e">Q</text><path d="M0-5 3.6 0 0 5-3.6 0Z" transform="translate(-10.2 -60) scale(.62)" fill="#b3261e"/></g><g transform="translate(120 124) rotate(17)"><rect x="-18" y="-82" width="36" height="74" rx="3.5" fill="#fbfbf7" stroke="#8f9b95" stroke-width="1"/><text x="-13.5" y="-70" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#1d2321">J</text><path d="M0-5.4A2.3 2.3 0 1 1 0-.8 2.3 2.3 0 1 1 0-5.4ZM-2.6-1.6A2.3 2.3 0 1 1-2.6 3 2.3 2.3 0 1 1-2.6-1.6ZM2.6-1.6A2.3 2.3 0 1 1 2.6 3 2.3 2.3 0 1 1 2.6-1.6ZM0 0-1.6 5H1.6Z" transform="translate(-10.2 -60) scale(.62)" fill="#1d2321"/></g><g transform="translate(120 124) rotate(34)"><rect x="-18" y="-82" width="36" height="74" rx="3.5" fill="#fbfbf7" stroke="#8f9b95" stroke-width="1"/><text x="-13.5" y="-70" font-family="Archivo, Arial Narrow, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#b3261e">10</text><path d="M0 3.6C-5.4-.8-4.6-5.6-2.3-5.6-1-5.6 0-4.7 0-3.3 0-4.7 1-5.6 2.3-5.6 4.6-5.6 5.4-.8 0 3.6Z" transform="translate(-10.2 -60) scale(.62)" fill="#b3261e"/><path d="M0 3.6C-5.4-.8-4.6-5.6-2.3-5.6-1-5.6 0-4.7 0-3.3 0-4.7 1-5.6 2.3-5.6 4.6-5.6 5.4-.8 0 3.6Z" transform="translate(0 -42) scale(1.5)" fill="#b3261e"/></g><path d="M46 100C82 124 158 124 194 100Q203 104 201 114 200 120 194 124C158 150 82 150 46 124 40 120 39 114 39 108 39 102 46 100 46 100Z" fill="#a67b17"/><path d="M46 100C82 124 158 124 194 100 200 102 202 106 200 110 160 132 80 132 40 110 38 106 40 102 46 100Z" fill="#d9ad45"/><path d="M58 109C92 126 148 126 182 109" stroke="#6b4f08" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+  </article></li>
+  <li><article class="item" aria-labelledby="opener-h">
+    <div class="body">
+      <h3 id="opener-h">Bottle and can opener</h3>
+      <p class="tag">Made to order</p>
+      <p class="desc">A large-handled grip aid that twists off bottle caps and lifts can tabs.</p>
+      <div class="buy">
+        <p class="price">$10</p>
+        <a class="order" href="mailto:veteranhomeguardians@gmail.com?subject=Order%3A%20Bottle%20and%20can%20opener&amp;body=Hello%2C%0D%0A%0D%0AI%27d%20like%20to%20order%3A%20Bottle%20and%20can%20opener%0D%0A%0D%0AQuantity%3A%0D%0AText%20or%20design%20to%20print%2C%20if%20any%3A%0D%0AColor%2C%20if%20you%20have%20a%20preference%3A%0D%0AShipping%20address%3A%0D%0AAnything%20else%3A%0D%0A%0D%0AThank%20you"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 6h17v12h-17zM4 6.5l8 6.5 8-6.5"/></svg>Order<span class="vh"> the bottle and can opener by email</span></a>
+      </div>
+    </div>
+    <svg class="art" viewBox="0 0 240 160" role="img" aria-label="Drawing of a green opener with a long, thick handle and a round toothed opening holding a bottle cap" focusable="false"><ellipse cx="124" cy="136" rx="86" ry="5" fill="#143229" opacity=".14"/><rect x="30" y="64" width="128" height="36" rx="18" fill="#2c6a55"/><circle cx="180" cy="82" r="36" fill="#2c6a55"/><path d="M46 70h96" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".18"/><path d="M74 76v12M90 76v12M106 76v12M122 76v12" stroke="#1d4c3c" stroke-width="5" stroke-linecap="round"/><rect x="38" y="78" width="18" height="8" rx="4" class="hole"/><circle cx="180" cy="82" r="20" class="hole"/><path d="M194.6 82 L192.8 83.9 L194 86.3 L191.6 87.6 L192.1 90.2 L189.5 90.8 L189.1 93.4 L186.4 93.2 L185.3 95.6 L182.9 94.6 L181.1 96.6 L179 94.9 L176.8 96.2 L175.3 94 L172.7 94.6 L172 92.1 L169.3 91.9 L169.3 89.3 L166.8 88.3 L167.7 85.8 L165.6 84.2 L167.1 82 L165.6 79.8 L167.7 78.2 L166.8 75.7 L169.3 74.7 L169.3 72.1 L172 71.9 L172.7 69.4 L175.3 70 L176.8 67.8 L179 69.1 L181.1 67.4 L182.9 69.4 L185.3 68.4 L186.4 70.8 L189.1 70.6 L189.5 73.2 L192.1 73.8 L191.6 76.4 L194 77.7 L192.8 80.1Z" fill="#aeb6b9"/><circle cx="180" cy="82" r="10.5" fill="#cfd5d7"/><path d="M200.2 78.7L195.5 82L200.2 85.3ZM198.3 91.3L192.5 91.1L194.5 96.5ZM189.4 100.2L184.8 96.7L183.1 102.3ZM176.9 102.3L175.2 96.7L170.6 100.2ZM165.5 96.5L167.5 91.1L161.7 91.3ZM159.8 85.3L164.5 82L159.8 78.7ZM161.7 72.7L167.5 72.9L165.5 67.5ZM170.6 63.8L175.2 67.3L176.9 61.7ZM183.1 61.7L184.8 67.3L189.4 63.8ZM194.5 67.5L192.5 72.9L198.3 72.7Z" fill="#2c6a55"/><circle cx="180" cy="82" r="36" fill="none" stroke="#1d4c3c" stroke-width="1.2"/></svg>
+  </article></li>
+  <li><article class="item" aria-labelledby="qr-keychains-h">
+    <div class="body">
+      <h3 id="qr-keychains-h">Custom QR keychains</h3>
+      <p class="tag">Made to order</p>
+      <p class="desc">Your link as a scannable QR code on a 2-color keychain, for businesses and events.</p>
+      <div class="buy">
+        <p class="price">$75 <span class="unit">for 50</span></p>
+        <a class="order" href="mailto:veteranhomeguardians@gmail.com?subject=Order%3A%20Custom%20QR%20keychains&amp;body=Hello%2C%0D%0A%0D%0AI%27d%20like%20a%20quote%20for%3A%20Custom%20QR%20keychains%0D%0A%0D%0AQuantity%3A%0D%0ALink%20for%20the%20QR%20code%3A%0D%0ATwo%20colors%20you%27d%20like%3A%0D%0ADate%20you%20need%20them%20by%3A%0D%0AShipping%20address%3A%0D%0AAnything%20else%3A%0D%0A%0D%0AThank%20you"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 6h17v12h-17zM4 6.5l8 6.5 8-6.5"/></svg>Get a quote<span class="vh"> for custom QR keychains by email</span></a>
+      </div>
+    </div>
+    <svg class="art" viewBox="0 0 240 160" role="img" aria-label="Drawing of a square green keychain on a metal ring, with a white QR code on its face" focusable="false"><ellipse cx="132" cy="146" rx="56" ry="5" fill="#143229" opacity=".14"/><g transform="rotate(-8 132 96)"><circle cx="80" cy="42" r="19" fill="none" stroke="#8a9397" stroke-width="3.4"/><path d="M64 31a19 19 0 0 1 24-6.5" fill="none" stroke="#c4cbce" stroke-width="1.2"/><circle cx="93" cy="57" r="10.5" fill="#1f4a3d"/><rect x="94" y="58" width="80" height="80" rx="10" fill="#1f4a3d"/><circle cx="93" cy="57" r="4.4" class="hole"/><path d="M86 50a19 19 0 0 0 9 10" fill="none" stroke="#8a9397" stroke-width="3.4"/><rect x="103" y="67" width="62" height="62" rx="3" fill="#f7f8f4"/><path d="M107 71h2.6v2.6h-2.6zM109.6 71h2.6v2.6h-2.6zM112.1 71h2.6v2.6h-2.6zM114.7 71h2.6v2.6h-2.6zM117.3 71h2.6v2.6h-2.6zM119.9 71h2.6v2.6h-2.6zM122.4 71h2.6v2.6h-2.6zM127.6 71h2.6v2.6h-2.6zM130.1 71h2.6v2.6h-2.6zM132.7 71h2.6v2.6h-2.6zM135.3 71h2.6v2.6h-2.6zM137.9 71h2.6v2.6h-2.6zM143 71h2.6v2.6h-2.6zM145.6 71h2.6v2.6h-2.6zM148.1 71h2.6v2.6h-2.6zM150.7 71h2.6v2.6h-2.6zM153.3 71h2.6v2.6h-2.6zM155.9 71h2.6v2.6h-2.6zM158.4 71h2.6v2.6h-2.6zM107 73.6h2.6v2.6h-2.6zM122.4 73.6h2.6v2.6h-2.6zM132.7 73.6h2.6v2.6h-2.6zM137.9 73.6h2.6v2.6h-2.6zM143 73.6h2.6v2.6h-2.6zM158.4 73.6h2.6v2.6h-2.6zM107 76.1h2.6v2.6h-2.6zM112.1 76.1h2.6v2.6h-2.6zM114.7 76.1h2.6v2.6h-2.6zM117.3 76.1h2.6v2.6h-2.6zM122.4 76.1h2.6v2.6h-2.6zM130.1 76.1h2.6v2.6h-2.6zM132.7 76.1h2.6v2.6h-2.6zM137.9 76.1h2.6v2.6h-2.6zM143 76.1h2.6v2.6h-2.6zM148.1 76.1h2.6v2.6h-2.6zM150.7 76.1h2.6v2.6h-2.6zM153.3 76.1h2.6v2.6h-2.6zM158.4 76.1h2.6v2.6h-2.6zM107 78.7h2.6v2.6h-2.6zM112.1 78.7h2.6v2.6h-2.6zM114.7 78.7h2.6v2.6h-2.6zM117.3 78.7h2.6v2.6h-2.6zM122.4 78.7h2.6v2.6h-2.6zM137.9 78.7h2.6v2.6h-2.6zM143 78.7h2.6v2.6h-2.6zM148.1 78.7h2.6v2.6h-2.6zM150.7 78.7h2.6v2.6h-2.6zM153.3 78.7h2.6v2.6h-2.6zM158.4 78.7h2.6v2.6h-2.6zM107 81.3h2.6v2.6h-2.6zM112.1 81.3h2.6v2.6h-2.6zM114.7 81.3h2.6v2.6h-2.6zM117.3 81.3h2.6v2.6h-2.6zM122.4 81.3h2.6v2.6h-2.6zM132.7 81.3h2.6v2.6h-2.6zM135.3 81.3h2.6v2.6h-2.6zM137.9 81.3h2.6v2.6h-2.6zM143 81.3h2.6v2.6h-2.6zM148.1 81.3h2.6v2.6h-2.6zM150.7 81.3h2.6v2.6h-2.6zM153.3 81.3h2.6v2.6h-2.6zM158.4 81.3h2.6v2.6h-2.6zM107 83.9h2.6v2.6h-2.6zM122.4 83.9h2.6v2.6h-2.6zM132.7 83.9h2.6v2.6h-2.6zM143 83.9h2.6v2.6h-2.6zM158.4 83.9h2.6v2.6h-2.6zM107 86.4h2.6v2.6h-2.6zM109.6 86.4h2.6v2.6h-2.6zM112.1 86.4h2.6v2.6h-2.6zM114.7 86.4h2.6v2.6h-2.6zM117.3 86.4h2.6v2.6h-2.6zM119.9 86.4h2.6v2.6h-2.6zM122.4 86.4h2.6v2.6h-2.6zM127.6 86.4h2.6v2.6h-2.6zM132.7 86.4h2.6v2.6h-2.6zM137.9 86.4h2.6v2.6h-2.6zM143 86.4h2.6v2.6h-2.6zM145.6 86.4h2.6v2.6h-2.6zM148.1 86.4h2.6v2.6h-2.6zM150.7 86.4h2.6v2.6h-2.6zM153.3 86.4h2.6v2.6h-2.6zM155.9 86.4h2.6v2.6h-2.6zM158.4 86.4h2.6v2.6h-2.6zM127.6 89h2.6v2.6h-2.6zM132.7 89h2.6v2.6h-2.6zM107 91.6h2.6v2.6h-2.6zM109.6 91.6h2.6v2.6h-2.6zM122.4 91.6h2.6v2.6h-2.6zM127.6 91.6h2.6v2.6h-2.6zM132.7 91.6h2.6v2.6h-2.6zM135.3 91.6h2.6v2.6h-2.6zM137.9 91.6h2.6v2.6h-2.6zM140.4 91.6h2.6v2.6h-2.6zM143 91.6h2.6v2.6h-2.6zM150.7 91.6h2.6v2.6h-2.6zM107 94.1h2.6v2.6h-2.6zM109.6 94.1h2.6v2.6h-2.6zM112.1 94.1h2.6v2.6h-2.6zM114.7 94.1h2.6v2.6h-2.6zM117.3 94.1h2.6v2.6h-2.6zM127.6 94.1h2.6v2.6h-2.6zM135.3 94.1h2.6v2.6h-2.6zM148.1 94.1h2.6v2.6h-2.6zM150.7 94.1h2.6v2.6h-2.6zM155.9 94.1h2.6v2.6h-2.6zM109.6 96.7h2.6v2.6h-2.6zM112.1 96.7h2.6v2.6h-2.6zM119.9 96.7h2.6v2.6h-2.6zM122.4 96.7h2.6v2.6h-2.6zM125 96.7h2.6v2.6h-2.6zM132.7 96.7h2.6v2.6h-2.6zM143 96.7h2.6v2.6h-2.6zM148.1 96.7h2.6v2.6h-2.6zM150.7 96.7h2.6v2.6h-2.6zM109.6 99.3h2.6v2.6h-2.6zM117.3 99.3h2.6v2.6h-2.6zM119.9 99.3h2.6v2.6h-2.6zM125 99.3h2.6v2.6h-2.6zM130.1 99.3h2.6v2.6h-2.6zM132.7 99.3h2.6v2.6h-2.6zM135.3 99.3h2.6v2.6h-2.6zM140.4 99.3h2.6v2.6h-2.6zM143 99.3h2.6v2.6h-2.6zM150.7 99.3h2.6v2.6h-2.6zM109.6 101.9h2.6v2.6h-2.6zM112.1 101.9h2.6v2.6h-2.6zM114.7 101.9h2.6v2.6h-2.6zM117.3 101.9h2.6v2.6h-2.6zM122.4 101.9h2.6v2.6h-2.6zM125 101.9h2.6v2.6h-2.6zM132.7 101.9h2.6v2.6h-2.6zM143 101.9h2.6v2.6h-2.6zM148.1 101.9h2.6v2.6h-2.6zM150.7 101.9h2.6v2.6h-2.6zM130.1 104.4h2.6v2.6h-2.6zM143 104.4h2.6v2.6h-2.6zM153.3 104.4h2.6v2.6h-2.6zM155.9 104.4h2.6v2.6h-2.6zM158.4 104.4h2.6v2.6h-2.6zM107 107h2.6v2.6h-2.6zM109.6 107h2.6v2.6h-2.6zM112.1 107h2.6v2.6h-2.6zM114.7 107h2.6v2.6h-2.6zM117.3 107h2.6v2.6h-2.6zM119.9 107h2.6v2.6h-2.6zM122.4 107h2.6v2.6h-2.6zM130.1 107h2.6v2.6h-2.6zM137.9 107h2.6v2.6h-2.6zM143 107h2.6v2.6h-2.6zM145.6 107h2.6v2.6h-2.6zM153.3 107h2.6v2.6h-2.6zM155.9 107h2.6v2.6h-2.6zM107 109.6h2.6v2.6h-2.6zM122.4 109.6h2.6v2.6h-2.6zM127.6 109.6h2.6v2.6h-2.6zM135.3 109.6h2.6v2.6h-2.6zM145.6 109.6h2.6v2.6h-2.6zM148.1 109.6h2.6v2.6h-2.6zM150.7 109.6h2.6v2.6h-2.6zM155.9 109.6h2.6v2.6h-2.6zM158.4 109.6h2.6v2.6h-2.6zM107 112.1h2.6v2.6h-2.6zM112.1 112.1h2.6v2.6h-2.6zM114.7 112.1h2.6v2.6h-2.6zM117.3 112.1h2.6v2.6h-2.6zM122.4 112.1h2.6v2.6h-2.6zM127.6 112.1h2.6v2.6h-2.6zM130.1 112.1h2.6v2.6h-2.6zM135.3 112.1h2.6v2.6h-2.6zM137.9 112.1h2.6v2.6h-2.6zM148.1 112.1h2.6v2.6h-2.6zM153.3 112.1h2.6v2.6h-2.6zM158.4 112.1h2.6v2.6h-2.6zM107 114.7h2.6v2.6h-2.6zM112.1 114.7h2.6v2.6h-2.6zM114.7 114.7h2.6v2.6h-2.6zM117.3 114.7h2.6v2.6h-2.6zM122.4 114.7h2.6v2.6h-2.6zM127.6 114.7h2.6v2.6h-2.6zM130.1 114.7h2.6v2.6h-2.6zM132.7 114.7h2.6v2.6h-2.6zM135.3 114.7h2.6v2.6h-2.6zM137.9 114.7h2.6v2.6h-2.6zM143 114.7h2.6v2.6h-2.6zM148.1 114.7h2.6v2.6h-2.6zM150.7 114.7h2.6v2.6h-2.6zM153.3 114.7h2.6v2.6h-2.6zM155.9 114.7h2.6v2.6h-2.6zM158.4 114.7h2.6v2.6h-2.6zM107 117.3h2.6v2.6h-2.6zM112.1 117.3h2.6v2.6h-2.6zM114.7 117.3h2.6v2.6h-2.6zM117.3 117.3h2.6v2.6h-2.6zM122.4 117.3h2.6v2.6h-2.6zM127.6 117.3h2.6v2.6h-2.6zM132.7 117.3h2.6v2.6h-2.6zM143 117.3h2.6v2.6h-2.6zM153.3 117.3h2.6v2.6h-2.6zM155.9 117.3h2.6v2.6h-2.6zM158.4 117.3h2.6v2.6h-2.6zM107 119.9h2.6v2.6h-2.6zM122.4 119.9h2.6v2.6h-2.6zM130.1 119.9h2.6v2.6h-2.6zM132.7 119.9h2.6v2.6h-2.6zM135.3 119.9h2.6v2.6h-2.6zM137.9 119.9h2.6v2.6h-2.6zM140.4 119.9h2.6v2.6h-2.6zM143 119.9h2.6v2.6h-2.6zM145.6 119.9h2.6v2.6h-2.6zM155.9 119.9h2.6v2.6h-2.6zM107 122.4h2.6v2.6h-2.6zM109.6 122.4h2.6v2.6h-2.6zM112.1 122.4h2.6v2.6h-2.6zM114.7 122.4h2.6v2.6h-2.6zM117.3 122.4h2.6v2.6h-2.6zM119.9 122.4h2.6v2.6h-2.6zM122.4 122.4h2.6v2.6h-2.6zM127.6 122.4h2.6v2.6h-2.6zM130.1 122.4h2.6v2.6h-2.6zM132.7 122.4h2.6v2.6h-2.6zM135.3 122.4h2.6v2.6h-2.6zM137.9 122.4h2.6v2.6h-2.6zM140.4 122.4h2.6v2.6h-2.6zM143 122.4h2.6v2.6h-2.6zM145.6 122.4h2.6v2.6h-2.6z" fill="#143229"/></g></svg>
+  </article></li>
+</ul>
+</section>
+
+<section class="other" aria-labelledby="other">
+<h2 id="other"><span class="sym"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/icons.svg#chat"/></svg></span>Other ways to order</h2>
+<p>Order button not opening your email? Write to us at the address below and name the item you want.</p>
+<p><a class="btn line addr" href="mailto:veteranhomeguardians@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 6h17v12h-17zM4 6.5l8 6.5 8-6.5"/></svg><span class="vh">Email </span>veteranhomeguardians@gmail.com</a></p>
+</section>
+</main>
+<footer>
+  <p>Travis Vought, Marengo, Ohio.</p>
+  <p><a href="/">Back to the home page</a> · <a href="/privacy/">Privacy</a></p>
+</footer>
+</div>
+<script>window.goatcounter={path:function(){return "/travisvought.com"+location.pathname},referrer:function(){try{var u=new URL(document.referrer);return u.origin+u.pathname}catch(e){return ""}}};</script><script data-goatcounter="https://vhg-guide.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

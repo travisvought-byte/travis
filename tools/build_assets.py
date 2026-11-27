@@ -133,6 +133,7 @@ LASTMOD = "2026-11-27"
     f'  <url><loc>{SITE}open-data/</loc><lastmod>2026-11-24</lastmod></url>\n'
     f'  <url><loc>{SITE}adults/</loc><lastmod>2026-11-26</lastmod></url>\n'
     f'  <url><loc>{SITE}beekeepers/</loc><lastmod>2026-11-27</lastmod></url>\n'
+    f'  <url><loc>{SITE}shop/</loc><lastmod>2026-11-27</lastmod></url>\n'
     '</urlset>\n')
 (repo / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n")
 
