@@ -166,7 +166,7 @@ page = f'''<!DOCTYPE html>
 <p class="sub">Activity directors, nurses and therapists can order for several residents in one email.</p>
 <div class="other">
   <p><a class="btn" href="{FAC}">{MAIL_ICON}Send a facility order<span class="vh"> by email</span></a></p>
-  <p>Facilities in Morrow, Knox, Delaware and Marion counties can ask to see the samples on a Veteran Home Guardians visit. <a class="inline" href="{SAM}">Ask for a sample visit<span class="vh"> by email</span></a>.</p>
+  <p>Facilities Veteran Home Guardians visits in Morrow and Knox counties can ask to see the samples on a visit. <a class="inline" href="{SAM}">Ask for a sample visit<span class="vh"> by email</span></a>.</p>
 </div>
 </section>
 
