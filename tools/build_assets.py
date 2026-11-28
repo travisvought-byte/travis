@@ -133,6 +133,16 @@ LASTMOD = "2026-11-27"
     f'  <url><loc>{SITE}open-data/</loc><lastmod>2026-11-24</lastmod></url>\n'
     f'  <url><loc>{SITE}adults/</loc><lastmod>2026-11-26</lastmod></url>\n'
     f'  <url><loc>{SITE}beekeepers/</loc><lastmod>2026-11-27</lastmod></url>\n'
+    f'  <url><loc>{SITE}grants/</loc><lastmod>2026-11-28</lastmod></url>\n'
+    f'  <url><loc>{SITE}grants/ready.html</loc><lastmod>2026-11-28</lastmod></url>\n'
+    f'  <url><loc>{SITE}grants/find.html</loc><lastmod>2026-11-28</lastmod></url>\n'
+    f'  <url><loc>{SITE}grants/federal.html</loc><lastmod>2026-11-28</lastmod></url>\n'
+    f'  <url><loc>{SITE}grants/foundations.html</loc><lastmod>2026-11-28</lastmod></url>\n'
+    f'  <url><loc>{SITE}grants/write.html</loc><lastmod>2026-11-28</lastmod></url>\n'
+    f'  <url><loc>{SITE}grants/sponsor.html</loc><lastmod>2026-11-28</lastmod></url>\n'
+    f'  <url><loc>{SITE}grants/myths.html</loc><lastmod>2026-11-28</lastmod></url>\n'
+    f'  <url><loc>{SITE}grants/play.html</loc><lastmod>2026-11-28</lastmod></url>\n'
+    f'  <url><loc>{SITE}grants/sources.html</loc><lastmod>2026-11-28</lastmod></url>\n'
     f'  <url><loc>{SITE}shop/</loc><lastmod>2026-11-27</lastmod></url>\n'
     '</urlset>\n')
 (repo / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n")
